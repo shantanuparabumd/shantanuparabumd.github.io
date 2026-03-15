@@ -32,8 +32,8 @@
 
 /* Project Card Styling */
 .project-card {
-    background-color: #0a0a0a;
-    border: 1px solid rgba(0, 255, 255, 0.07);
+    background-color: var(--card-bg);
+    border: 1px solid var(--card-border);
     border-radius: 8px;
     padding: 16px;
     position: relative;
@@ -119,8 +119,8 @@
 }
 
 .modal-content {
-    background-color: #0d0d0d;
-    border: 1px solid rgba(0, 255, 255, 0.12);
+    background-color: var(--card-bg);
+    border: 1px solid var(--card-border);
     padding: 20px;
     border-radius: 10px;
     width: 85%;

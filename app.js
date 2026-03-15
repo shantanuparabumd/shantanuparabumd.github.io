@@ -18,6 +18,63 @@ window.addEventListener('scroll', () => {
   }
 }, { passive: true });
 
+// ─── Theme Toggle ────────────────────────────────────────────────────────────
+const themeToggle = document.getElementById('theme-toggle');
+const html = document.documentElement;
+
+function setTheme(theme) {
+  html.setAttribute('data-theme', theme);
+  localStorage.setItem('portfolio-theme', theme);
+  const icon = themeToggle.querySelector('i');
+  if (icon) {
+    icon.className = theme === 'light' ? 'fas fa-moon' : 'fas fa-sun';
+  }
+}
+
+// Load saved theme
+const savedTheme = localStorage.getItem('portfolio-theme') || 'dark';
+setTheme(savedTheme);
+
+if (themeToggle) {
+  themeToggle.addEventListener('click', () => {
+    const current = html.getAttribute('data-theme');
+    setTheme(current === 'dark' ? 'light' : 'dark');
+  });
+}
+
+// ─── Hamburger Menu ──────────────────────────────────────────────────────────
+const hamburgerBtn = document.getElementById('hamburger-btn');
+const headerNav = document.querySelector('header nav');
+let navOverlay = null;
+
+if (hamburgerBtn && headerNav) {
+  // Create overlay
+  navOverlay = document.createElement('div');
+  navOverlay.className = 'nav-overlay';
+  document.body.appendChild(navOverlay);
+
+  hamburgerBtn.addEventListener('click', () => {
+    hamburgerBtn.classList.toggle('active');
+    headerNav.classList.toggle('open');
+    navOverlay.classList.toggle('active');
+  });
+
+  navOverlay.addEventListener('click', () => {
+    hamburgerBtn.classList.remove('active');
+    headerNav.classList.remove('open');
+    navOverlay.classList.remove('active');
+  });
+
+  // Close nav on link click (mobile)
+  headerNav.querySelectorAll('a').forEach(link => {
+    link.addEventListener('click', () => {
+      hamburgerBtn.classList.remove('active');
+      headerNav.classList.remove('open');
+      navOverlay.classList.remove('active');
+    });
+  });
+}
+
 // ─── Typing Animation ─────────────────────────────────────────────────────────
 const typedEl = document.getElementById('typed-role');
 if (typedEl) {
@@ -99,7 +156,7 @@ if (aboutContent) {
   aboutObserver.observe(aboutContent);
 }
 
-// ─── Work & Education Cards (slide in once) ────────────────────────────────────
+// ─── Timeline Items (slide in) ───────────────────────────────────────────────
 const slideObserver = new IntersectionObserver((entries) => {
   entries.forEach(entry => {
     if (entry.isIntersecting) {
@@ -109,7 +166,58 @@ const slideObserver = new IntersectionObserver((entries) => {
   });
 }, { threshold: 0.12 });
 
-document.querySelectorAll('.work-card, .education-card').forEach(el => slideObserver.observe(el));
+document.querySelectorAll('.timeline-item, .education-card').forEach(el => slideObserver.observe(el));
+
+// ─── Stats Counter Animation ─────────────────────────────────────────────────
+const statNumbers = document.querySelectorAll('.stat-number');
+let statsAnimated = false;
+
+function animateStats() {
+  if (statsAnimated) return;
+  statsAnimated = true;
+
+  statNumbers.forEach(stat => {
+    const target = parseFloat(stat.dataset.target);
+    const isDecimal = target % 1 !== 0;
+    const duration = 1800;
+    const start = performance.now();
+
+    function update(now) {
+      const elapsed = now - start;
+      const progress = Math.min(elapsed / duration, 1);
+      // Ease out cubic
+      const eased = 1 - Math.pow(1 - progress, 3);
+      const current = eased * target;
+
+      if (isDecimal) {
+        stat.textContent = current.toFixed(2);
+      } else {
+        stat.textContent = Math.floor(current);
+      }
+
+      if (progress < 1) {
+        requestAnimationFrame(update);
+      } else {
+        stat.textContent = isDecimal ? target.toFixed(2) : target;
+      }
+    }
+
+    requestAnimationFrame(update);
+  });
+}
+
+const statsSection = document.getElementById('stats');
+if (statsSection) {
+  const statsObserver = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        animateStats();
+        statsObserver.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.4 });
+  statsObserver.observe(statsSection);
+}
 
 // ─── Helper: Observe cards with stagger ──────────────────────────────────────
 function observeCardsWithStagger(selector) {
@@ -150,10 +258,53 @@ function observeSkillBars() {
 // ─── Projects ─────────────────────────────────────────────────────────────────
 const projectList = document.getElementById('project-list');
 const modalView = document.getElementById('modal-view');
+const projectFilters = document.getElementById('project-filters');
 let allProjects = [];
+
+function collectAllTags(projects) {
+  const tagSet = new Set();
+  projects.forEach(p => p.tags.forEach(t => tagSet.add(t)));
+  return [...tagSet].sort();
+}
+
+function buildFilterButtons(tags) {
+  if (!projectFilters) return;
+  tags.forEach(tag => {
+    const btn = document.createElement('button');
+    btn.className = 'filter-btn';
+    btn.dataset.filter = tag;
+    btn.textContent = tag;
+    btn.addEventListener('click', () => {
+      document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+      filterProjects(tag);
+    });
+    projectFilters.appendChild(btn);
+  });
+
+  // "All" button click handler
+  const allBtn = projectFilters.querySelector('[data-filter="all"]');
+  if (allBtn) {
+    allBtn.addEventListener('click', () => {
+      document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
+      allBtn.classList.add('active');
+      filterProjects('all');
+    });
+  }
+}
+
+function filterProjects(tag) {
+  if (tag === 'all') {
+    updateProjectList(allProjects);
+  } else {
+    const filtered = allProjects.filter(p => p.tags.includes(tag));
+    updateProjectList(filtered);
+  }
+}
 
 function updateProjectList(projects) {
   projectList.innerHTML = '';
+  modalView.innerHTML = '';
 
   projects.forEach(project => {
     const card = document.createElement('div');
@@ -293,12 +444,20 @@ fetch('data/project-data.json')
   .then(r => r.json())
   .then(data => {
     allProjects = data.projects.sort((a, b) => new Date(b.date) - new Date(a.date));
+    const allTags = collectAllTags(allProjects);
+    buildFilterButtons(allTags);
     updateProjectList(allProjects);
   });
 
 // ─── Blogs ────────────────────────────────────────────────────────────────────
 const blogList = document.getElementById('blog-list');
 let allBlogs = [];
+
+function estimateReadTime(description) {
+  const words = description.split(/\s+/).length;
+  const minutes = Math.max(1, Math.ceil(words / 200));
+  return minutes;
+}
 
 function updateBlogList(blogs) {
   blogList.innerHTML = '';
@@ -323,10 +482,23 @@ function updateBlogList(blogs) {
     description.textContent = blog.description;
     card.appendChild(description);
 
+    // Meta row: date + read time
+    const metaRow = document.createElement('div');
+    metaRow.style.cssText = 'display:flex;align-items:center;gap:12px;margin-top:auto;';
+
     const date = document.createElement('p');
     date.classList.add('date');
     date.textContent = blog.date;
-    card.appendChild(date);
+    date.style.margin = '0';
+    metaRow.appendChild(date);
+
+    const readTime = document.createElement('span');
+    readTime.classList.add('read-time');
+    const mins = estimateReadTime(blog.description);
+    readTime.innerHTML = `<i class="fas fa-clock"></i> ${mins} min read`;
+    metaRow.appendChild(readTime);
+
+    card.appendChild(metaRow);
 
     blogList.appendChild(card);
   });
@@ -382,7 +554,9 @@ const aboutVideo = document.querySelector('#about-video');
 const aboutImageOverlay = document.querySelector('.about-image-overlay');
 const textOverlay = document.createElement('div');
 textOverlay.classList.add('text-overlay');
-aboutImageOverlay.parentElement.appendChild(textOverlay);
+if (aboutImageOverlay) {
+  aboutImageOverlay.parentElement.appendChild(textOverlay);
+}
 
 const videoSources = [
   { src: 'images/videos/quadruped_rl.mp4', title: 'Reinforcement Learning' },
@@ -398,6 +572,7 @@ const videoSources = [
 let videoIndex = 0;
 
 function changeBackgroundVideo() {
+  if (!aboutVideo) return;
   aboutVideo.style.opacity = '0';
   textOverlay.style.opacity = '0';
   textOverlay.style.transform = 'translateX(100%)';
@@ -413,16 +588,18 @@ function changeBackgroundVideo() {
   }, 1000);
 }
 
-setTimeout(() => {
-  aboutImageOverlay.style.opacity = '0';
-  aboutVideo.style.opacity = '1';
-  textOverlay.style.opacity = '1';
-  textOverlay.style.transform = 'translateX(0)';
-  aboutVideo.src = videoSources[videoIndex].src;
-  aboutVideo.play();
-  textOverlay.textContent = videoSources[videoIndex].title;
-  setInterval(changeBackgroundVideo, 7000);
-}, 1600);
+if (aboutVideo && aboutImageOverlay) {
+  setTimeout(() => {
+    aboutImageOverlay.style.opacity = '0';
+    aboutVideo.style.opacity = '1';
+    textOverlay.style.opacity = '1';
+    textOverlay.style.transform = 'translateX(0)';
+    aboutVideo.src = videoSources[videoIndex].src;
+    aboutVideo.play();
+    textOverlay.textContent = videoSources[videoIndex].title;
+    setInterval(changeBackgroundVideo, 7000);
+  }, 1600);
+}
 
 // ─── Resume Modal ─────────────────────────────────────────────────────────────
 function openModal() {

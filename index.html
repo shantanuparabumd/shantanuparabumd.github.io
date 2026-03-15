@@ -1,8 +1,26 @@
 <!DOCTYPE html>
-<html>
+<html lang="en" data-theme="dark">
 <head>
 	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<meta name="description" content="Portfolio of Shantanu Parab — Robotics Engineer specializing in ROS2, PyTorch, and reinforcement learning.">
+	<meta name="author" content="Shantanu Parab">
+	<meta name="keywords" content="Robotics Engineer, ROS2, PyTorch, Reinforcement Learning, Machine Learning, C++, Python, Portfolio">
+
+	<!-- Open Graph -->
+	<meta property="og:title" content="Shantanu Parab | Robotics Engineer">
+	<meta property="og:description" content="Robotics Engineer specializing in ROS2, PyTorch, and reinforcement learning. Designing intelligent robotic systems through sophisticated ML solutions.">
+	<meta property="og:image" content="images/background/profile.jpg">
+	<meta property="og:url" content="https://shantanuparabumd.github.io">
+	<meta property="og:type" content="website">
+	<meta property="og:site_name" content="Shantanu Parab Portfolio">
+
+	<!-- Twitter Card -->
+	<meta name="twitter:card" content="summary_large_image">
+	<meta name="twitter:title" content="Shantanu Parab | Robotics Engineer">
+	<meta name="twitter:description" content="Robotics Engineer specializing in ROS2, PyTorch, and reinforcement learning.">
+	<meta name="twitter:image" content="images/background/profile.jpg">
+
 	<title>Shantanu Parab | Robotics Engineer</title>
 	<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 	<link rel="stylesheet" href="css/loading.css">
@@ -16,9 +34,7 @@
 	<link rel="stylesheet" href="css/education.css">
 	<link rel="stylesheet" href="css/interactive.css">
 	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.14.0/css/all.css" integrity="sha384-HzLeBuhoNPvSl5KYnjx0BT+WB0QEEqLprO+NBkkk5gbc67FTaL7XIGa2w1L0Xbgc" crossorigin="anonymous">
-	
 	<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/devicons/devicon@v2.15.1/devicon.min.css">
-
 </head>
 <body>
 	<div id="loading-screen"><div class="loader-content"><h1 class="loader-name" data-text="SHANTANU PARAB">SHANTANU PARAB</h1><p class="loader-role">Robotics Engineer · ML Researcher · ROS2 Developer</p><div class="loader-bar"><div class="loader-bar-fill"></div></div></div></div>
@@ -36,6 +52,14 @@
 				<li><a href="#contact">Contact</a></li>
 			</ul>
 		</nav>
+		<div class="header-controls">
+			<button id="theme-toggle" title="Toggle light/dark theme" aria-label="Toggle theme">
+				<i class="fas fa-sun"></i>
+			</button>
+			<button id="hamburger-btn" title="Toggle menu" aria-label="Toggle navigation menu">
+				<span></span><span></span><span></span>
+			</button>
+		</div>
 	</header>
 
 	<main>
@@ -51,7 +75,7 @@
 				<p class="hero-bio">
 					As a Robotics Engineer specializing in machine learning architectures, I bring a strong foundation in PyTorch, production-grade C++ and Python coding, and advanced expertise in ROS 2.
 					My focus is on designing intelligent, reliable robotic systems through sophisticated reinforcement learning solutions, elevating system efficiency and dependability for real-world applications.
-					With a passion for pushing boundaries in robotics, I’m committed to transforming complex robotic challenges into streamlined, impactful solutions.
+					With a passion for pushing boundaries in robotics, I'm committed to transforming complex robotic challenges into streamlined, impactful solutions.
 				</p>
 				<button class="resume-button" onclick="openModal()">Get Resume</button>
 
@@ -61,109 +85,147 @@
 						<span class="close" onclick="closeModal()">&times;</span>
 						<h2>Request My Resume</h2>
 						<iframe src="https://forms.gle/txUmUzbEL748WhF4A" width="100%" height="500" frameborder="0" marginheight="0" marginwidth="0">
-							Loading…
+							Loading...
 						</iframe>
 					</div>
 				</div>
 			</div>
 		</section>
 
-		 
+		<!-- Stats Counter -->
+		<section id="stats">
+			<div class="stats-container">
+				<div class="stat-item">
+					<span class="stat-number" data-target="5">0</span><span class="stat-suffix">+</span>
+					<span class="stat-label">Years Experience</span>
+				</div>
+				<div class="stat-item">
+					<span class="stat-number" data-target="14">0</span><span class="stat-suffix">+</span>
+					<span class="stat-label">Projects Built</span>
+				</div>
+				<div class="stat-item">
+					<span class="stat-number" data-target="19">0</span><span class="stat-suffix">+</span>
+					<span class="stat-label">Articles & Talks</span>
+				</div>
+				<div class="stat-item">
+					<span class="stat-number" data-target="3.97">0</span>
+					<span class="stat-label">Master's GPA</span>
+				</div>
+			</div>
+		</section>
+
+		<!-- Wave Divider -->
+		<div class="wave-divider">
+			<svg viewBox="0 0 1200 80" preserveAspectRatio="none">
+				<path d="M0,40 C200,80 400,0 600,40 C800,80 1000,0 1200,40 L1200,80 L0,80 Z" fill="var(--background-color)"/>
+			</svg>
+		</div>
+
 		<section id="work-experience">
-			<hr>
-			<br>
 			<h2>Work Experience</h2>
-		
-			<!-- First Work Experience Card (Info on Left, Image as Background) -->
-			<div class="work-card" style="background-image: url('images/background/trossen.webp');">
-				<div class="work-info-left">
-					<h3>Trossen Robotics</h3>
-					<p class="job-title">Robotics and Machine Learning Intern</p>
-					<p class="work-description">
-						At Trossen Robotics, I served as a Robotics and Machine Learning Intern, integrating multi-camera support for Aloha Kits with Hugging Face, contributing open-source code, and fostering a dataset-sharing community. I developed educational resources—including a YouTube series and tutorials on imitation and reinforcement learning—boosting user engagement by 40%. Additionally, I optimized ROS2, Python, and C++ codebases into a unified data management interface, enhancing user experience by 30%, and designed a touchscreen interface that reduced operator dependence and setup time by 25%.
-					</p>
-					
-					
-					<p class="duration">Jun 2024 - Present</p>
-					<div id="workskill-tags">
-						<div class="worktag">Pytorch</div>
-						<div class="worktag">ROS</div>
-						<div class="worktag">Python</div>
-						<div class="worktag">C++</div>
-						<div class="worktag">Reinforcement Learning</div>
+
+			<div class="timeline">
+				<div class="timeline-line"></div>
+
+				<div class="timeline-item left">
+					<div class="timeline-dot"></div>
+					<div class="timeline-date">Jun 2024 - Present</div>
+					<div class="work-card" style="background-image: url('images/background/trossen.webp');">
+						<div class="work-info">
+							<h3>Trossen Robotics</h3>
+							<p class="job-title">Robotics and Machine Learning Intern</p>
+							<p class="work-description">
+								At Trossen Robotics, I served as a Robotics and Machine Learning Intern, integrating multi-camera support for Aloha Kits with Hugging Face, contributing open-source code, and fostering a dataset-sharing community. I developed educational resources—including a YouTube series and tutorials on imitation and reinforcement learning—boosting user engagement by 40%. Additionally, I optimized ROS2, Python, and C++ codebases into a unified data management interface, enhancing user experience by 30%, and designed a touchscreen interface that reduced operator dependence and setup time by 25%.
+							</p>
+							<div id="workskill-tags">
+								<div class="worktag">Pytorch</div>
+								<div class="worktag">ROS</div>
+								<div class="worktag">Python</div>
+								<div class="worktag">C++</div>
+								<div class="worktag">Reinforcement Learning</div>
+							</div>
+						</div>
 					</div>
 				</div>
-			</div>
 
-			<div class="work-card reverse" style="background-image: url('images/logo/umd.png');">
-				<div class="work-info-right">
-					<h3>Univeristy of Maryland</h3>
-					<p class="job-title">Teaching Assistant | Path Planning & Robot Modeling</p>
-					<p class="work-description">
-						At the University of Maryland, I taught and guided over 100 students on advanced robotics concepts, including RRT*, SLAM, and ROS 2, achieving a 95% project completion rate.
-						I redesigned the curriculum to focus on hands-on problem-solving in robot kinematics, behaviors, and grasping techniques, which improved engagement and understanding by 40%.
-						My efforts ensured students gained practical skills and a strong foundation in robotic systems.
-					</p>
-					<p class="duration">Jul 2023 - May 2024</p>
-					<div id="workskill-tags">
-						<div class="worktag">Path Planning</div>
-						<div class="worktag">Robot Modelling</div>
-						<div class="worktag">Python</div>
-						<div class="worktag">C++</div>
-						<div class="worktag">ROS</div>
-
+				<div class="timeline-item right">
+					<div class="timeline-dot"></div>
+					<div class="timeline-date">Jul 2023 - May 2024</div>
+					<div class="work-card" style="background-image: url('images/logo/umd.png');">
+						<div class="work-info">
+							<h3>University of Maryland</h3>
+							<p class="job-title">Teaching Assistant | Path Planning & Robot Modeling</p>
+							<p class="work-description">
+								At the University of Maryland, I taught and guided over 100 students on advanced robotics concepts, including RRT*, SLAM, and ROS 2, achieving a 95% project completion rate.
+								I redesigned the curriculum to focus on hands-on problem-solving in robot kinematics, behaviors, and grasping techniques, which improved engagement and understanding by 40%.
+							</p>
+							<div id="workskill-tags">
+								<div class="worktag">Path Planning</div>
+								<div class="worktag">Robot Modelling</div>
+								<div class="worktag">Python</div>
+								<div class="worktag">C++</div>
+								<div class="worktag">ROS</div>
+							</div>
+						</div>
 					</div>
 				</div>
-			</div>
 
-			<div class="work-card" style="background-image: url('images/background/accenture.png');">
-				<div class="work-info-left">
-					<h3>Accenture</h3>
-					<p class="job-title">Associate Software Developer</p>
-					<p class="work-description">
-						As an Associate Software Developer at Accenture, I worked with Intel as a client on their CIBR 
-						(Central Inventory Business Repository) system. I used PLSQL, scripting, and Python to solve 
-						and debug issues, as well as provide software support. During my time there, I utilized various 
-						tools such as PLSQL and Abinitio to ensure the efficient functioning of the system.
-					</p>
-					<p class="duration">Jul 2021 - Jul 2022</p>
-					<div id="workskill-tags">
-						<div class="worktag">PLSQL</div>
-						<div class="worktag">Python</div>
-						<div class="worktag">LINUX</div>
+				<div class="timeline-item left">
+					<div class="timeline-dot"></div>
+					<div class="timeline-date">Jul 2021 - Jul 2022</div>
+					<div class="work-card" style="background-image: url('images/background/accenture.png');">
+						<div class="work-info">
+							<h3>Accenture</h3>
+							<p class="job-title">Associate Software Developer</p>
+							<p class="work-description">
+								As an Associate Software Developer at Accenture, I worked with Intel as a client on their CIBR
+								(Central Inventory Business Repository) system. I used PLSQL, scripting, and Python to solve
+								and debug issues, as well as provide software support. During my time there, I utilized various
+								tools such as PLSQL and Abinitio to ensure the efficient functioning of the system.
+							</p>
+							<div id="workskill-tags">
+								<div class="worktag">PLSQL</div>
+								<div class="worktag">Python</div>
+								<div class="worktag">LINUX</div>
+							</div>
+						</div>
 					</div>
 				</div>
-			</div>
-		
-			<!-- Second Work Experience Card (Info on Right, Image as Background) -->
-			<div class="work-card reverse" style="background-image: url('images/background/robocon.jpeg');">
-				<div class="work-info-right">
-					<h3>ROBOCON CRCE</h3>
-					<p class="job-title">Team Captain</p>
-					<p class="work-description">
-						As a Lead of an Undergraduate Robotics team, I led a group of students to build robots from scratch 
-						based on different problem statements given by ABU Robocon. I was responsible for overseeing the design 
-						and development of the robots, from initial concept to final product.
-					</p>
-					<p class="duration">Jun 2019 - Jul 2021</p>
-					<div id="workskill-tags">
-						<div class="worktag">Python</div>
-						<div class="worktag">Arduino</div>
-						<div class="worktag">RaspberryPi</div>
-						<div class="worktag">Solidworks</div>
+
+				<div class="timeline-item right">
+					<div class="timeline-dot"></div>
+					<div class="timeline-date">Jun 2019 - Jul 2021</div>
+					<div class="work-card" style="background-image: url('images/background/robocon.jpeg');">
+						<div class="work-info">
+							<h3>ROBOCON CRCE</h3>
+							<p class="job-title">Team Captain</p>
+							<p class="work-description">
+								As a Lead of an Undergraduate Robotics team, I led a group of students to build robots from scratch
+								based on different problem statements given by ABU Robocon. I was responsible for overseeing the design
+								and development of the robots, from initial concept to final product.
+							</p>
+							<div id="workskill-tags">
+								<div class="worktag">Python</div>
+								<div class="worktag">Arduino</div>
+								<div class="worktag">RaspberryPi</div>
+								<div class="worktag">Solidworks</div>
+							</div>
+						</div>
 					</div>
 				</div>
 			</div>
 		</section>
 
+		<!-- Wave Divider -->
+		<div class="wave-divider flip">
+			<svg viewBox="0 0 1200 80" preserveAspectRatio="none">
+				<path d="M0,40 C200,80 400,0 600,40 C800,80 1000,0 1200,40 L1200,80 L0,80 Z" fill="var(--background-color)"/>
+			</svg>
+		</div>
 
 		<section id="education">
-			<hr>
-			<br>
 			<h2>Education</h2>
 			<div class="education-cards">
-		
-				<!-- First Education Card (Text on Left, Image in Background) -->
 				<div class="education-card" style="background-image: url('images/logo/umd.png');">
 					<div class="education-info-left">
 						<h3>Prof. Master's in Robotics</h3>
@@ -172,8 +234,6 @@
 						<p class="gpa"><b>GPA:</b> 3.97</p>
 					</div>
 				</div>
-		
-				<!-- Second Education Card (Text on Right, Image in Background) -->
 				<div class="education-card reverse" style="background-image: url('images/logo/mu.png');">
 					<div class="education-info-right">
 						<h3>Bachelor of Electronic Engineering</h3>
@@ -182,86 +242,85 @@
 						<p class="gpa"><b>GPA:</b> 3.65</p>
 					</div>
 				</div>
-		
 			</div>
 		</section>
 
+		<!-- Wave Divider -->
+		<div class="wave-divider">
+			<svg viewBox="0 0 1200 80" preserveAspectRatio="none">
+				<path d="M0,40 C200,80 400,0 600,40 C800,80 1000,0 1200,40 L1200,80 L0,80 Z" fill="var(--background-color)"/>
+			</svg>
+		</div>
 
-		  
-		  
-
-		 
-	
-		  <section id="projects">
+		<section id="projects">
 			<div class="projects-container">
-				<!-- Section Heading -->
-				<hr>
-				<br>
 				<h2>Projects</h2>
-	
-				<!-- Project Cards List -->
+
+				<!-- Filter Buttons -->
+				<div id="project-filters">
+					<button class="filter-btn active" data-filter="all">All</button>
+				</div>
+
 				<div id="project-list-container">
 					<div id="project-list"></div>
 				</div>
 			</div>
-	
-			<!-- Modal View -->
 			<div id="modal-view"></div>
 		</section>
 
+		<!-- Wave Divider -->
+		<div class="wave-divider flip">
+			<svg viewBox="0 0 1200 80" preserveAspectRatio="none">
+				<path d="M0,40 C200,80 400,0 600,40 C800,80 1000,0 1200,40 L1200,80 L0,80 Z" fill="var(--background-color)"/>
+			</svg>
+		</div>
+
 		<section id="blogs">
 			<div class="blogs-container">
-				<!-- Section Heading -->
-				<hr>
-				<br>
 				<h2>Blogs, Articles and Videos</h2>
-	
-				<!-- Project Cards List -->
 				<div id="blog-list-container">
 					<div id="blog-list"></div>
 				</div>
 			</div>
-	
-			<!-- Modal View -->
 			<div id="modal-blog-view"></div>
 		</section>
-		  
+
+		<!-- Wave Divider -->
+		<div class="wave-divider">
+			<svg viewBox="0 0 1200 80" preserveAspectRatio="none">
+				<path d="M0,40 C200,80 400,0 600,40 C800,80 1000,0 1200,40 L1200,80 L0,80 Z" fill="var(--background-color)"/>
+			</svg>
+		</div>
+
 		<section id="skills">
-			<hr>
-			<br>
-
 			<h2>My Skills</h2>
-			<div id="skills-container">
-	
-			</div>
-			
-		  </section>
+			<div id="skills-container"></div>
+		</section>
 
-		  
-		  <section id="contact">
-			<hr>
-			<br>
+		<!-- Wave Divider -->
+		<div class="wave-divider flip">
+			<svg viewBox="0 0 1200 80" preserveAspectRatio="none">
+				<path d="M0,40 C200,80 400,0 600,40 C800,80 1000,0 1200,40 L1200,80 L0,80 Z" fill="var(--background-color)"/>
+			</svg>
+		</div>
+
+		<section id="contact">
 			<h2>Contact Me</h2>
 			<div class="contact-container">
-			  <div class="contact-item">
-				
-				<a href="mailto:shantanuparab99@gmail.com"><i class="fas fa-envelope fa-2x"></i> shantanuparab99@gmail.com</a>
-			  </div> 
-			  <div class="contact-item">
-				
-				<a href="tel:+1-301-905-7946"><i class="fas fa-phone fa-2x"></i>  (301) 905 7946</a>
-			  </div>
-			  <div class="contact-item">
-				
-				<a href="https://www.linkedin.com/in/shantanu-parab"><i class="fab fa-linkedin fa-2x"></i> LinkedIn</a>
-			  </div>
-			  <div class="contact-item">
-				<a href="https://github.com/shantanuparabumd"><i class="fab fa-github fa-2x"></i>  GitHub</a>
-			  </div>
+				<div class="contact-item">
+					<a href="mailto:shantanuparab99@gmail.com"><i class="fas fa-envelope fa-2x"></i> shantanuparab99@gmail.com</a>
+				</div>
+				<div class="contact-item">
+					<a href="tel:+1-301-905-7946"><i class="fas fa-phone fa-2x"></i>  (301) 905 7946</a>
+				</div>
+				<div class="contact-item">
+					<a href="https://www.linkedin.com/in/shantanu-parab"><i class="fab fa-linkedin fa-2x"></i> LinkedIn</a>
+				</div>
+				<div class="contact-item">
+					<a href="https://github.com/shantanuparabumd"><i class="fab fa-github fa-2x"></i>  GitHub</a>
+				</div>
 			</div>
-		  </section>
-
-		  
+		</section>
 	</main>
 	<footer>
 		<p>&copy; 2024 Shantanu Parab</p>

@@ -171,7 +171,7 @@
 
 /* Modal Content */
 .modal-content {
-    background-color: #111;
+    background-color: var(--card-bg, #111);
     border: 1px solid rgba(0, 255, 255, 0.15);
     margin: 6% auto;
     padding: 24px;
@@ -224,6 +224,14 @@
     opacity: 0;
     transform: translateX(100%);
     z-index: 3;
+}
+
+[data-theme="light"] .about-content p.hero-bio {
+    color: rgba(26, 26, 46, 0.85);
+}
+
+[data-theme="light"] #about::before {
+    background: linear-gradient(to right, rgba(245, 245, 247, 0.92) 35%, rgba(245, 245, 247, 0.4) 70%, rgba(245, 245, 247, 0.1));
 }
 
 @media (max-width: 36rem) {

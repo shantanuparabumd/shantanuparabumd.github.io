@@ -19,8 +19,8 @@
     background-position: center right;
     position: relative;
     overflow: hidden;
-    background-color: #080808;
-    border: 1px solid rgba(255, 255, 255, 0.04);
+    background-color: var(--card-bg);
+    border: 1px solid var(--card-border);
     opacity: 0;
     transform: translateX(-60px);
     transition: opacity 0.6s ease, transform 0.8s ease;
@@ -80,6 +80,14 @@
     font-size: 0.82rem;
     font-weight: 500;
     color: var(--primary-color);
+}
+
+[data-theme="light"] .education-card::before {
+    background: linear-gradient(to right, rgba(255, 255, 255, 0.95) 40%, rgba(255, 255, 255, 0.6) 75%, rgba(255, 255, 255, 0.2));
+}
+
+[data-theme="light"] .education-card.reverse::before {
+    background: linear-gradient(to left, rgba(255, 255, 255, 0.95) 40%, rgba(255, 255, 255, 0.6) 75%, rgba(255, 255, 255, 0.2));
 }
 
 @media (max-width: 576px) {

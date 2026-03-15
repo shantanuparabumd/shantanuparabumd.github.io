@@ -1,5 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&display=swap');
 
+/* ─── Dark Theme (default) ─────────────────────────────────────────────────── */
 :root {
     --primary-color: #00FFFF;
     --secondary-color: #FF69B4;
@@ -15,6 +16,29 @@
     --font-family: 'Space Grotesk', sans-serif;
     --glow-cyan: 0 0 12px rgba(0, 255, 255, 0.5);
     --glow-pink: 0 0 12px rgba(255, 105, 180, 0.5);
+    --card-bg: #0a0a0a;
+    --card-border: rgba(0, 255, 255, 0.07);
+    --surface-color: #111111;
+}
+
+/* ─── Light Theme ──────────────────────────────────────────────────────────── */
+[data-theme="light"] {
+    --primary-color: #0088AA;
+    --secondary-color: #D84888;
+    --background-color: #F5F5F7;
+    --navbar-bg-color: #FFFFFF;
+    --text-color: #1A1A2E;
+    --hover-text-color: #FFFFFF;
+    --muted-text-color: #5A5A6E;
+    --shadow-color: rgba(0, 0, 0, 0.08);
+    --meter-bg-color: #D4D4D8;
+    --list-color: rgba(216, 72, 136, 0.08);
+    --list-color-dark: rgba(216, 72, 136, 0.15);
+    --glow-cyan: 0 0 12px rgba(0, 136, 170, 0.2);
+    --glow-pink: 0 0 12px rgba(216, 72, 136, 0.2);
+    --card-bg: #FFFFFF;
+    --card-border: rgba(0, 0, 0, 0.08);
+    --surface-color: #EAEAEF;
 }
 
 * {
@@ -32,6 +56,7 @@ body {
     line-height: 1.6;
     overflow-x: hidden;
     scroll-behavior: smooth;
+    transition: background-color 0.4s ease, color 0.4s ease;
 }
 
 a {
@@ -65,7 +90,7 @@ p {
     transition: width 0.1s linear;
 }
 
-/* Navbar */
+/* ─── Navbar ───────────────────────────────────────────────────────────────── */
 header {
     background-color: rgba(0, 0, 0, 0.65);
     backdrop-filter: blur(14px);
@@ -79,7 +104,12 @@ header {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    transition: background-color 0.3s ease;
+    transition: background-color 0.4s ease, border-color 0.4s ease;
+}
+
+[data-theme="light"] header {
+    background-color: rgba(255, 255, 255, 0.85);
+    border-bottom: 1px solid rgba(0, 0, 0, 0.08);
 }
 
 header h1 {
@@ -88,6 +118,7 @@ header h1 {
     font-weight: 700;
     letter-spacing: 0.04em;
     text-shadow: var(--glow-pink);
+    flex-shrink: 0;
 }
 
 header nav ul {
@@ -116,6 +147,88 @@ header nav ul li a:hover {
 header nav ul li a.active {
     color: var(--secondary-color);
     text-shadow: var(--glow-pink);
+}
+
+/* ─── Header Controls (Theme Toggle + Hamburger) ──────────────────────────── */
+.header-controls {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    flex-shrink: 0;
+}
+
+#theme-toggle {
+    width: 38px;
+    height: 38px;
+    border-radius: 50%;
+    border: 1px solid rgba(0, 255, 255, 0.3);
+    background: transparent;
+    color: var(--primary-color);
+    font-size: 1rem;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s ease;
+}
+
+#theme-toggle:hover {
+    background: rgba(0, 255, 255, 0.1);
+    box-shadow: var(--glow-cyan);
+}
+
+[data-theme="light"] #theme-toggle {
+    border-color: rgba(0, 0, 0, 0.15);
+}
+
+/* ─── Hamburger Button ─────────────────────────────────────────────────────── */
+#hamburger-btn {
+    display: none;
+    flex-direction: column;
+    justify-content: center;
+    gap: 5px;
+    width: 38px;
+    height: 38px;
+    padding: 8px 6px;
+    background: transparent;
+    border: 1px solid rgba(0, 255, 255, 0.3);
+    border-radius: 4px;
+    cursor: pointer;
+    z-index: 1001;
+}
+
+#hamburger-btn span {
+    display: block;
+    width: 100%;
+    height: 2px;
+    background: var(--primary-color);
+    border-radius: 2px;
+    transition: all 0.3s ease;
+}
+
+#hamburger-btn.active span:nth-child(1) {
+    transform: rotate(45deg) translate(5px, 5px);
+}
+
+#hamburger-btn.active span:nth-child(2) {
+    opacity: 0;
+}
+
+#hamburger-btn.active span:nth-child(3) {
+    transform: rotate(-45deg) translate(5px, -5px);
+}
+
+/* ─── Mobile Nav Overlay ───────────────────────────────────────────────────── */
+.nav-overlay {
+    display: none;
+    position: fixed;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.5);
+    z-index: 998;
+}
+
+.nav-overlay.active {
+    display: block;
 }
 
 /* Main Content */
@@ -163,6 +276,11 @@ footer {
     color: var(--muted-text-color);
     font-size: 0.8rem;
     max-width: 100%;
+    transition: background-color 0.4s ease;
+}
+
+[data-theme="light"] footer {
+    border-top: 1px solid rgba(0, 0, 0, 0.08);
 }
 
 footer p {
@@ -170,23 +288,200 @@ footer p {
     color: var(--muted-text-color);
 }
 
-/* Section Divider */
-hr {
-    border: 0;
-    height: 1px;
-    background: linear-gradient(to right, transparent, var(--secondary-color) 40%, var(--primary-color) 60%, transparent);
-    box-shadow: 0 0 8px rgba(255, 105, 180, 0.4);
-    margin: 24px 0 16px;
+/* ─── Wave Dividers ────────────────────────────────────────────────────────── */
+.wave-divider {
+    width: 100%;
+    overflow: hidden;
+    line-height: 0;
+    margin: -1px 0;
 }
 
-/* Responsive */
+.wave-divider svg {
+    display: block;
+    width: 100%;
+    height: 40px;
+}
+
+.wave-divider.flip svg {
+    transform: rotate(180deg);
+}
+
+.wave-divider path {
+    transition: fill 0.4s ease;
+}
+
+/* ─── Stats Counter Section ────────────────────────────────────────────────── */
+#stats {
+    padding: 40px 16px;
+    background: var(--surface-color);
+    transition: background-color 0.4s ease;
+}
+
+.stats-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 48px;
+    max-width: 900px;
+    margin: 0 auto;
+    flex-wrap: wrap;
+}
+
+.stat-item {
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 4px;
+}
+
+.stat-number {
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: var(--primary-color);
+    text-shadow: var(--glow-cyan);
+    line-height: 1.1;
+    font-variant-numeric: tabular-nums;
+}
+
+.stat-suffix {
+    font-size: 2rem;
+    font-weight: 700;
+    color: var(--primary-color);
+    text-shadow: var(--glow-cyan);
+}
+
+.stat-label {
+    font-size: 0.75rem;
+    font-weight: 500;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--muted-text-color);
+}
+
+/* ─── Project Filters ──────────────────────────────────────────────────────── */
+#project-filters {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-bottom: 20px;
+}
+
+.filter-btn {
+    background: transparent;
+    border: 1px solid rgba(0, 255, 255, 0.2);
+    color: var(--muted-text-color);
+    padding: 5px 14px;
+    border-radius: 20px;
+    font-size: 0.72rem;
+    font-family: var(--font-family);
+    font-weight: 500;
+    letter-spacing: 0.04em;
+    cursor: pointer;
+    transition: all 0.25s ease;
+}
+
+.filter-btn:hover {
+    border-color: var(--primary-color);
+    color: var(--primary-color);
+}
+
+.filter-btn.active {
+    background: var(--primary-color);
+    color: #000;
+    border-color: var(--primary-color);
+    box-shadow: var(--glow-cyan);
+}
+
+/* ─── Blog Read Time Badge ─────────────────────────────────────────────────── */
+.read-time {
+    font-size: 0.65rem;
+    color: var(--muted-text-color);
+    display: flex;
+    align-items: center;
+    gap: 4px;
+    margin-top: 4px;
+}
+
+.read-time i {
+    font-size: 0.6rem;
+    color: var(--primary-color);
+}
+
+/* ─── Responsive ───────────────────────────────────────────────────────────── */
 @media (max-width: 768px) {
-    header nav ul {
-        flex-direction: column;
+    #hamburger-btn {
+        display: flex;
     }
 
-    header nav ul li {
-        margin-left: 0;
-        margin-bottom: 8px;
+    header nav {
+        position: fixed;
+        top: 0;
+        right: -280px;
+        width: 280px;
+        height: 100vh;
+        background: var(--navbar-bg-color);
+        padding: 80px 24px 24px;
+        transition: right 0.35s ease;
+        z-index: 999;
+        border-left: 1px solid rgba(0, 255, 255, 0.1);
+        box-shadow: -4px 0 20px rgba(0, 0, 0, 0.5);
+    }
+
+    [data-theme="light"] header nav {
+        background: #fff;
+        border-left: 1px solid rgba(0, 0, 0, 0.08);
+        box-shadow: -4px 0 20px rgba(0, 0, 0, 0.1);
+    }
+
+    header nav.open {
+        right: 0;
+    }
+
+    header nav ul {
+        flex-direction: column;
+        gap: 4px;
+    }
+
+    header nav ul li a {
+        display: block;
+        padding: 12px 16px;
+        font-size: 1rem;
+        border-radius: 6px;
+    }
+
+    header nav ul li a:hover,
+    header nav ul li a.active {
+        background-color: rgba(0, 255, 255, 0.08);
+    }
+
+    .stats-container {
+        gap: 24px;
+    }
+
+    .stat-number {
+        font-size: 1.8rem;
+    }
+
+    .stat-item {
+        min-width: 120px;
+    }
+}
+
+@media (max-width: 480px) {
+    header h1 {
+        font-size: 1.2rem;
+    }
+
+    .stats-container {
+        gap: 16px;
+    }
+
+    .stat-item {
+        min-width: 100px;
+    }
+
+    .stat-number {
+        font-size: 1.5rem;
     }
 }
