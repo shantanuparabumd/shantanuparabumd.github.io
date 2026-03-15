@@ -1,46 +1,42 @@
-/* Education Section */
 #education {
-    padding: 0.938rem; /* Reduced by 25% from 1.25rem */
+    padding: 16px;
 }
 
-/* Education Cards Container */
 .education-cards {
     width: 100%;
 }
 
-/* Education Card Styling */
 .education-card {
     display: flex;
     justify-content: flex-start;
     align-items: center;
     width: 100%;
-    height: 11.719rem; /* Reduced by 25% from 15.625rem */
-    margin: 1.406rem 0; /* Reduced by 25% from 1.875rem */
-    border-radius: 0.703rem; /* Reduced by 25% from 0.9375rem */
-    background-size: contain;
+    min-height: 160px;
+    margin: 20px 0;
+    border-radius: 10px;
+    background-size: cover;
     background-repeat: no-repeat;
     background-position: center right;
     position: relative;
     overflow: hidden;
+    background-color: #080808;
+    border: 1px solid rgba(255, 255, 255, 0.04);
     opacity: 0;
-    transform: translateX(-23.438rem); /* Reduced by 25% from -31.25rem */
-    transition: opacity 0.5s ease, transform 1.0s ease;
+    transform: translateX(-60px);
+    transition: opacity 0.6s ease, transform 0.8s ease;
 }
 
-/* Reverse the layout for alternating cards */
 .education-card.reverse {
     justify-content: flex-end;
     background-position: center left;
-    transform: translateX(23.438rem); /* Reduced by 25% from 31.25rem */
+    transform: translateX(60px);
 }
 
-/* Class to slide in when in view */
 .education-card.in-view {
     opacity: 1;
     transform: translateX(0);
 }
 
-/* Gradient Overlay */
 .education-card::before {
     content: '';
     position: absolute;
@@ -48,44 +44,45 @@
     left: 0;
     width: 100%;
     height: 100%;
-    background: linear-gradient(to right, rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0));
+    background: linear-gradient(to right, rgba(0, 0, 0, 0.92) 40%, rgba(0, 0, 0, 0.4) 75%, rgba(0, 0, 0, 0.05));
     z-index: 1;
 }
 
 .education-card.reverse::before {
-    background: linear-gradient(to left, rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0));
+    background: linear-gradient(to left, rgba(0, 0, 0, 0.92) 40%, rgba(0, 0, 0, 0.4) 75%, rgba(0, 0, 0, 0.05));
 }
 
-/* Education Info */
 .education-info-left, .education-info-right {
     position: relative;
     z-index: 2;
-    padding: 1.406rem; /* Reduced by 25% from 1.875rem */
-    width: 50%;
+    padding: 28px 28px;
+    width: 55%;
     color: var(--text-color);
 }
 
 .education-info-left h3, .education-info-right h3 {
-    font-size: 1.688rem; /* Reduced by 25% from 2.25rem */
-    margin-bottom: 0.469rem; /* Reduced by 25% from 0.625rem */
+    font-size: 1.3rem;
+    font-weight: 700;
+    margin-bottom: 6px;
     color: var(--secondary-color);
+    text-shadow: var(--glow-pink);
+    letter-spacing: 0.02em;
 }
 
 .education-info-left p, .education-info-right p {
-    font-size: 1.125rem; /* Reduced by 25% from 1.5rem */
+    font-size: 0.85rem;
     line-height: 1.6;
-    color: var(--text-color);
+    color: rgba(255, 255, 255, 0.75);
 }
 
-/* GPA Styling */
 .gpa {
-    margin-top: 0.469rem; /* Reduced by 25% from 0.625rem */
-    font-weight: bold;
+    margin-top: 6px;
+    font-size: 0.82rem;
+    font-weight: 500;
     color: var(--primary-color);
 }
 
-/* Responsive Design for Smaller Screens */
-@media (max-width: 36rem) { /* Reduced by 25% from 48rem */
+@media (max-width: 576px) {
     .education-card {
         flex-direction: column;
         height: auto;
@@ -97,6 +94,6 @@
 
     .education-info-left, .education-info-right {
         width: 100%;
-        padding: 0.938rem; /* Reduced by 25% from 1.25rem */
+        padding: 20px 16px;
     }
 }

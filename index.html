@@ -2,7 +2,10 @@
 <html>
 <head>
 	<meta charset="UTF-8">
-	<title>Portfolio</title>
+	<meta name="description" content="Portfolio of Shantanu Parab — Robotics Engineer specializing in ROS2, PyTorch, and reinforcement learning.">
+	<title>Shantanu Parab | Robotics Engineer</title>
+	<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+	<link rel="stylesheet" href="css/loading.css">
 	<link rel="stylesheet" href="css/styles_new.css">
 	<link rel="stylesheet" href="css/about.css">
 	<link rel="stylesheet" href="css/skills.css">
@@ -10,20 +13,16 @@
 	<link rel="stylesheet" href="css/blogs.css">
 	<link rel="stylesheet" href="css/work.css">
 	<link rel="stylesheet" href="css/contact.css">
-	<link rel="stylesheet" href="css/education.css"> 
+	<link rel="stylesheet" href="css/education.css">
+	<link rel="stylesheet" href="css/interactive.css">
 	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.14.0/css/all.css" integrity="sha384-HzLeBuhoNPvSl5KYnjx0BT+WB0QEEqLprO+NBkkk5gbc67FTaL7XIGa2w1L0Xbgc" crossorigin="anonymous">
 	
 	<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/devicons/devicon@v2.15.1/devicon.min.css">
-	<!-- Link to jQuery library -->
-	<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-	<!-- Link to Slick CSS -->
-	<link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.css"/>
 
-	<!-- Link to Slick JavaScript -->
-	<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.js"></script>
-          
 </head>
 <body>
+	<div id="loading-screen"><div class="loader-content"><h1 class="loader-name" data-text="SHANTANU PARAB">SHANTANU PARAB</h1><p class="loader-role">Robotics Engineer · ML Researcher · ROS2 Developer</p><div class="loader-bar"><div class="loader-bar-fill"></div></div></div></div>
+	<div id="scroll-progress"></div>
 	<header>
 		<h1><i class="fas fa-robot"></i>  Shantanu Parab</h1>
 		<nav>
@@ -42,13 +41,14 @@
 	<main>
 		<section id="about">
 			<div class="about-image-overlay"></div>
-			<video id="about-video" autoplay muted loop playsinline>
-				<source src="../images/videos/aloha.mp4" type="video/mp4">
+			<video id="about-video" autoplay muted loop playsinline preload="none">
+				<source src="images/videos/aloha.mp4" type="video/mp4">
 				Your browser does not support HTML5 video.
 			</video>
 			<div class="about-content">
-				<h1>About Me</h1>
-				<p>
+				<h1>Shantanu Parab</h1>
+				<p class="hero-role"><span id="typed-role"></span><span class="typed-cursor">|</span></p>
+				<p class="hero-bio">
 					As a Robotics Engineer specializing in machine learning architectures, I bring a strong foundation in PyTorch, production-grade C++ and Python coding, and advanced expertise in ROS 2.
 					My focus is on designing intelligent, reliable robotic systems through sophisticated reinforcement learning solutions, elevating system efficiency and dependability for real-world applications.
 					With a passion for pushing boundaries in robotics, I’m committed to transforming complex robotic challenges into streamlined, impactful solutions.
@@ -75,7 +75,7 @@
 			<h2>Work Experience</h2>
 		
 			<!-- First Work Experience Card (Info on Left, Image as Background) -->
-			<div class="work-card" style="background-image: url('../images/background/trossen.webp');">
+			<div class="work-card" style="background-image: url('images/background/trossen.webp');">
 				<div class="work-info-left">
 					<h3>Trossen Robotics</h3>
 					<p class="job-title">Robotics and Machine Learning Intern</p>
@@ -95,7 +95,7 @@
 				</div>
 			</div>
 
-			<div class="work-card reverse" style="background-image: url('../images/logo/umd.png');">
+			<div class="work-card reverse" style="background-image: url('images/logo/umd.png');">
 				<div class="work-info-right">
 					<h3>Univeristy of Maryland</h3>
 					<p class="job-title">Teaching Assistant | Path Planning & Robot Modeling</p>
@@ -116,7 +116,7 @@
 				</div>
 			</div>
 
-			<div class="work-card" style="background-image: url('../images/background/accenture.png');">
+			<div class="work-card" style="background-image: url('images/background/accenture.png');">
 				<div class="work-info-left">
 					<h3>Accenture</h3>
 					<p class="job-title">Associate Software Developer</p>
@@ -136,7 +136,7 @@
 			</div>
 		
 			<!-- Second Work Experience Card (Info on Right, Image as Background) -->
-			<div class="work-card reverse" style="background-image: url('../images/background/robocon.jpeg');">
+			<div class="work-card reverse" style="background-image: url('images/background/robocon.jpeg');">
 				<div class="work-info-right">
 					<h3>ROBOCON CRCE</h3>
 					<p class="job-title">Team Captain</p>
@@ -268,4 +268,5 @@
 	</footer>
 </body>
 <script src="app.js"></script>
+<script src="js/interactive.js"></script>
 </html>

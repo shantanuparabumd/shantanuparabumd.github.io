@@ -1,0 +1,298 @@
+/* ── Custom Cursor (desktop/hover-capable devices only) ──────────────────── */
+@media (hover: hover) {
+  *, *::before, *::after { cursor: none !important; }
+
+  .cursor-dot {
+    position: fixed;
+    width: 7px; height: 7px;
+    background: var(--primary-color);
+    border-radius: 50%;
+    pointer-events: none;
+    z-index: 999999;
+    transform: translate(-50%, -50%);
+    box-shadow: 0 0 10px var(--primary-color), 0 0 22px rgba(0,255,255,0.3);
+    transition: width 0.15s, height 0.15s, background 0.15s;
+  }
+
+  .cursor-ring {
+    position: fixed;
+    width: 30px; height: 30px;
+    border: 1.5px solid rgba(0,255,255,0.5);
+    border-radius: 50%;
+    pointer-events: none;
+    z-index: 999998;
+    transform: translate(-50%, -50%);
+    transition: width 0.2s ease, height 0.2s ease, border-color 0.2s ease;
+  }
+
+  .cursor-ring.hover {
+    width: 52px; height: 52px;
+    border-color: rgba(255,105,180,0.7);
+  }
+}
+
+/* ── Neural Network Canvas (Hero Background) ─────────────────────────────── */
+#neural-canvas {
+  position: absolute;
+  top: 0; left: 0;
+  width: 100%; height: 100%;
+  z-index: 2;
+  pointer-events: none;
+  mix-blend-mode: screen;
+}
+
+/* ── Click Ripple ────────────────────────────────────────────────────────── */
+.click-ripple {
+  position: fixed;
+  border-radius: 50%;
+  pointer-events: none;
+  z-index: 999997;
+  transform: translate(-50%, -50%) scale(0);
+  animation: rippleOut 0.55s ease-out forwards;
+}
+
+@keyframes rippleOut {
+  to { transform: translate(-50%, -50%) scale(1); opacity: 0; }
+}
+
+/* ── 3D Card Tilt Shine ──────────────────────────────────────────────────── */
+.tilt-shine {
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  pointer-events: none;
+  z-index: 10;
+  background: radial-gradient(
+    circle at var(--shine-x, 50%) var(--shine-y, 50%),
+    rgba(255,255,255,0.07) 0%,
+    transparent 65%
+  );
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.project-card:hover .tilt-shine,
+.blog-card:hover .tilt-shine,
+.skill-card:hover .tilt-shine { opacity: 1; }
+
+/* ── Section Scan Line ───────────────────────────────────────────────────── */
+section { position: relative; }
+
+.section-scan::after {
+  content: '';
+  position: absolute;
+  top: -2px; left: 0;
+  width: 100%; height: 2px;
+  background: linear-gradient(90deg, transparent, var(--primary-color) 30%, var(--secondary-color) 70%, transparent);
+  box-shadow: 0 0 14px var(--primary-color);
+  z-index: 50;
+  pointer-events: none;
+  opacity: 0;
+}
+
+.section-scan.scanning::after {
+  animation: scanSweep 1s ease-in-out forwards;
+}
+
+@keyframes scanSweep {
+  0%   { top: 0;    opacity: 0; }
+  8%   { opacity: 1; }
+  92%  { opacity: 1; }
+  100% { top: 100%; opacity: 0; }
+}
+
+/* ── Section heading glitch on hover ────────────────────────────────────── */
+section h2[data-text] { position: relative; }
+
+section h2[data-text]:hover::before {
+  content: attr(data-text);
+  position: absolute;
+  top: 0; left: -2px;
+  color: var(--primary-color);
+  animation: hGlitch 0.25s steps(2, end);
+  clip-path: polygon(0 15%, 100% 15%, 100% 50%, 0 50%);
+  opacity: 0.55;
+}
+
+@keyframes hGlitch {
+  0%   { transform: translate(-2px, 0); }
+  33%  { transform: translate(2px, 1px); }
+  66%  { transform: translate(-1px, -1px); }
+  100% { transform: translate(0); }
+}
+
+/* ── Scroll-to-top Button ────────────────────────────────────────────────── */
+#scroll-top-btn {
+  position: fixed;
+  bottom: 84px; right: 20px;
+  width: 40px; height: 40px;
+  background: rgba(0,0,0,0.88);
+  border: 1px solid rgba(0,255,255,0.3);
+  border-radius: 50%;
+  color: var(--primary-color);
+  font-size: 1.1rem;
+  font-family: var(--font-family);
+  cursor: pointer;
+  z-index: 9990;
+  display: flex;
+  align-items: center; justify-content: center;
+  opacity: 0;
+  transform: translateY(12px);
+  transition: opacity 0.3s, transform 0.3s, box-shadow 0.3s;
+  pointer-events: none;
+}
+
+#scroll-top-btn.visible {
+  opacity: 1;
+  transform: translateY(0);
+  pointer-events: all;
+}
+
+#scroll-top-btn:hover {
+  box-shadow: 0 0 18px rgba(0,255,255,0.5);
+  background: rgba(0,255,255,0.1);
+}
+
+/* ── Terminal Toggle Button ──────────────────────────────────────────────── */
+#terminal-toggle {
+  position: fixed;
+  bottom: 20px; right: 20px;
+  width: 44px; height: 44px;
+  background: rgba(0,0,0,0.9);
+  border: 1px solid rgba(0,255,255,0.4);
+  border-radius: 50%;
+  color: var(--primary-color);
+  font-size: 1rem;
+  cursor: pointer;
+  z-index: 9991;
+  display: flex;
+  align-items: center; justify-content: center;
+  box-shadow: 0 0 14px rgba(0,255,255,0.2);
+  transition: box-shadow 0.3s, background 0.3s;
+}
+
+#terminal-toggle:hover {
+  box-shadow: 0 0 28px rgba(0,255,255,0.55);
+  background: rgba(0,255,255,0.1);
+}
+
+/* ── Terminal Widget ─────────────────────────────────────────────────────── */
+#terminal-widget {
+  position: fixed;
+  bottom: 76px; right: 20px;
+  width: 460px;
+  max-height: 380px;
+  background: rgba(0,0,0,0.96);
+  border: 1px solid rgba(0,255,255,0.22);
+  border-radius: 10px;
+  font-family: 'Courier New', Courier, monospace;
+  font-size: 0.74rem;
+  z-index: 9990;
+  box-shadow: 0 0 40px rgba(0,255,255,0.07), 0 20px 60px rgba(0,0,0,0.7);
+  display: flex;
+  flex-direction: column;
+  transform-origin: bottom right;
+  transform: scale(0.92);
+  opacity: 0;
+  pointer-events: none;
+  transition: transform 0.22s ease, opacity 0.22s ease;
+}
+
+#terminal-widget.open {
+  transform: scale(1);
+  opacity: 1;
+  pointer-events: all;
+}
+
+.terminal-titlebar {
+  background: rgba(0,255,255,0.05);
+  border-bottom: 1px solid rgba(0,255,255,0.1);
+  padding: 9px 13px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  user-select: none;
+  border-radius: 10px 10px 0 0;
+  flex-shrink: 0;
+}
+
+.terminal-dots { display: flex; gap: 5px; }
+.terminal-dots span {
+  width: 11px; height: 11px;
+  border-radius: 50%;
+  display: inline-block;
+  cursor: pointer;
+  transition: filter 0.2s;
+}
+.terminal-dots span:hover { filter: brightness(1.4); }
+.dot-red    { background: #FF5F57; }
+.dot-yellow { background: #FEBC2E; }
+.dot-green  { background: #28C840; }
+
+.terminal-titlebar-text {
+  color: rgba(0,255,255,0.5);
+  font-size: 0.68rem;
+  letter-spacing: 0.06em;
+}
+
+.terminal-output {
+  flex-grow: 1;
+  overflow-y: auto;
+  padding: 10px 14px 4px;
+  display: flex;
+  flex-direction: column;
+  gap: 1px;
+  scrollbar-width: thin;
+  scrollbar-color: rgba(0,255,255,0.15) transparent;
+}
+.terminal-output::-webkit-scrollbar { width: 3px; }
+.terminal-output::-webkit-scrollbar-thumb { background: rgba(0,255,255,0.2); border-radius: 4px; }
+
+.t-line {
+  line-height: 1.65;
+  white-space: pre-wrap;
+  word-break: break-word;
+  color: rgba(255,255,255,0.82);
+}
+.t-line.t-prompt  { color: var(--primary-color); }
+.t-line.t-success { color: #00FF88; }
+.t-line.t-warn    { color: #FEBC2E; }
+.t-line.t-error   { color: var(--secondary-color); }
+.t-line.t-dim     { color: rgba(255,255,255,0.38); }
+.t-line.t-pink    { color: var(--secondary-color); }
+.t-line.t-cyan    { color: var(--primary-color); }
+
+.terminal-input-row {
+  display: flex;
+  align-items: center;
+  padding: 7px 14px 11px;
+  border-top: 1px solid rgba(0,255,255,0.08);
+  gap: 7px;
+  flex-shrink: 0;
+}
+
+.terminal-prompt-sym {
+  color: var(--primary-color);
+  font-family: 'Courier New', monospace;
+  font-size: 0.74rem;
+  flex-shrink: 0;
+  white-space: nowrap;
+}
+
+#terminal-input-el {
+  flex: 1;
+  background: transparent;
+  border: none;
+  outline: none;
+  color: #fff;
+  font-family: 'Courier New', monospace;
+  font-size: 0.74rem;
+  caret-color: var(--primary-color);
+}
+
+/* ── Mobile: hide terminal on tiny screens ───────────────────────────────── */
+@media (max-width: 500px) {
+  #terminal-widget { width: calc(100vw - 24px); right: 12px; bottom: 72px; }
+  #terminal-toggle { right: 12px; bottom: 12px; }
+  #scroll-top-btn  { right: 64px; bottom: 12px; }
+}

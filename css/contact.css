@@ -1,77 +1,71 @@
-/* Contact Section */
 #contact {
     text-align: center;
-    padding: 1.875rem 0.938rem; /* Reduced from 2.5rem 1.25rem */
-    background-color: var(--background-color); /* Dark background */
-    color: var(--text-color);
+    padding: 32px 16px;
+    background-color: var(--background-color);
 }
 
 #contact h2 {
-    font-size: 1.172rem; /* Reduced from 1.563rem */
-    color: var(--secondary-color); /* Neon Pink for Heading */
-    margin-bottom: 1.406rem; /* Reduced from 1.875rem */
+    font-size: 0.8rem;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--secondary-color);
+    margin-bottom: 24px;
+    text-shadow: var(--glow-pink);
 }
 
-/* Contact Container */
 .contact-container {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
-    gap: 0.938rem; /* Reduced from 1.25rem */
+    gap: 14px;
 }
 
-/* Individual Contact Item */
 .contact-item {
-    background-color: var(--navbar-bg-color); /* Dark background for contact item */
-    padding: 0.938rem; /* Reduced from 1.25rem */
-    border-radius: 0.469rem; /* Reduced from 0.625rem */
-    width: 20rem; /* Reduced from 21.875rem */
+    background-color: #0a0a0a;
+    border: 1px solid rgba(0, 255, 255, 0.08);
+    padding: 16px 20px;
+    border-radius: 8px;
+    min-width: 200px;
     display: flex;
     align-items: center;
     justify-content: center;
-    box-shadow: 0 0.188rem 0.469rem var(--shadow-color); /* Reduced from 0.25rem 0.625rem */
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    transition: transform 0.25s ease, box-shadow 0.25s ease, border-color 0.25s ease;
 }
 
 .contact-item a {
-    color: var(--text-color); /* White text */
-    font-size: 0.9rem; /* Reduced from 0.688rem */
+    color: var(--muted-text-color);
+    font-size: 0.875rem;
+    font-weight: 500;
     text-decoration: none;
     display: flex;
     align-items: center;
-    gap: 0.469rem; /* Reduced from 0.625rem */
-    transition: color 0.3s ease;
-    word-break: break-all; /* Prevent overflow for long text */
+    gap: 10px;
+    transition: color 0.25s ease;
 }
 
-/* Icons in the Contact Links */
 .contact-item a i {
-    color: var(--secondary-color); /* Neon Pink for icons */
-    transition: color 0.3s ease;
+    color: var(--secondary-color);
+    font-size: 1.25rem;
+    transition: color 0.25s ease;
 }
 
-/* Hover Effects */
 .contact-item:hover {
-    transform: translateY(-0.234rem); /* Reduced from 0.313rem */
-    box-shadow: 0 0.281rem 0.563rem rgba(0, 0, 0, 0.4); /* Reduced from 0.375rem 0.75rem */
+    transform: translateY(-3px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.4), var(--glow-cyan);
+    border-color: rgba(0, 255, 255, 0.2);
 }
 
 .contact-item:hover a {
-    color: var(--secondary-color); /* Neon Pink text on hover */
+    color: var(--primary-color);
 }
 
 .contact-item:hover i {
-    color: var(--text-color); /* White icon on hover */
+    color: var(--primary-color);
 }
 
-/* Responsive Styling */
-@media (max-width: 36rem) { /* Reduced from 48rem */
+@media (max-width: 576px) {
     .contact-item {
         width: 100%;
         max-width: 100%;
-    }
-
-    #contact h2 {
-        font-size: 0.938rem; /* Reduced from 1.25rem */
     }
 }

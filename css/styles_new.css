@@ -1,22 +1,26 @@
+@import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&display=swap');
+
 :root {
-    --primary-color: #00FFFF;   /* Neon Blue */
-    --secondary-color: #FF69B4; /* Neon Pink */
-    --background-color: #1C1C1C; /* Dark Background */
-    --navbar-bg-color: #000000;  /* Navbar and footer background */
-    --text-color: #FFFFFF;  /* Default text color (White) */
-    --hover-text-color: #000000; /* Hover text color (Black) */
-    --muted-text-color: #BBBBBB; /* Light gray for less important text */
-    --shadow-color: rgba(0, 0, 0, 0.3); /* Subtle shadow for elements */
-    --meter-bg-color: #444; /* Meter track background */
-    --list-color: rgba(255, 105, 180, 0.2);
+    --primary-color: #00FFFF;
+    --secondary-color: #FF69B4;
+    --background-color: #1C1C1C;
+    --navbar-bg-color: #000000;
+    --text-color: #FFFFFF;
+    --hover-text-color: #000000;
+    --muted-text-color: #BBBBBB;
+    --shadow-color: rgba(0, 0, 0, 0.3);
+    --meter-bg-color: #444;
+    --list-color: rgba(255, 105, 180, 0.15);
     --list-color-dark: rgba(255, 105, 180, 0.3);
+    --font-family: 'Space Grotesk', sans-serif;
+    --glow-cyan: 0 0 12px rgba(0, 255, 255, 0.5);
+    --glow-pink: 0 0 12px rgba(255, 105, 180, 0.5);
 }
 
-/* Global Styles */
 * {
     margin: 0;
     padding: 0;
-    box-sizing: border-box;  /* Include padding and borders in width/height calculations */
+    box-sizing: border-box;
 }
 
 body {
@@ -26,33 +30,48 @@ body {
     margin: 0;
     padding: 0;
     line-height: 1.6;
-    overflow-x: hidden;  /* Prevent horizontal overflow */
+    overflow-x: hidden;
     scroll-behavior: smooth;
-    
 }
 
 a {
-    color: var(--primary-color);  /* Neon blue */
+    color: var(--primary-color);
     text-decoration: none;
 }
 
 a:hover {
-    color: var(--secondary-color);  /* Neon pink on hover */
+    color: var(--secondary-color);
 }
 
 h1, h2, h3 {
-    color: var(--primary-color);  /* Neon blue headers */
+    color: var(--primary-color);
     margin-bottom: 20px;
 }
 
 p {
-    color: var(--text-color);  /* White text */
+    color: var(--text-color);
+}
+
+/* Scroll Progress Bar */
+#scroll-progress {
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 2px;
+    background: linear-gradient(90deg, var(--primary-color), var(--secondary-color));
+    box-shadow: var(--glow-cyan);
+    z-index: 99999;
+    width: 0%;
+    transition: width 0.1s linear;
 }
 
 /* Navbar */
 header {
-    background-color: var(--navbar-bg-color);  /* Dark gray background */
-    padding: 20px;
+    background-color: rgba(0, 0, 0, 0.65);
+    backdrop-filter: blur(14px);
+    -webkit-backdrop-filter: blur(14px);
+    border-bottom: 1px solid rgba(0, 255, 255, 0.1);
+    padding: 16px 28px;
     position: fixed;
     width: 100%;
     top: 0;
@@ -60,11 +79,15 @@ header {
     display: flex;
     justify-content: space-between;
     align-items: center;
+    transition: background-color 0.3s ease;
 }
 
 header h1 {
-    color: var(--secondary-color);  /* Neon pink for your name/logo */
-    font-size: 56px;
+    color: var(--secondary-color);
+    font-size: 1.75rem;
+    font-weight: 700;
+    letter-spacing: 0.04em;
+    text-shadow: var(--glow-pink);
 }
 
 header nav ul {
@@ -72,58 +95,91 @@ header nav ul {
     margin: 0;
     padding: 0;
     display: flex;
-}
-
-header nav ul li {
-    margin-left: 20px;
+    gap: 8px;
 }
 
 header nav ul li a {
-    font-size: 24px;
-    color: var(--primary-color);  /* Neon blue for nav links */
+    font-size: 0.875rem;
+    font-weight: 500;
+    color: var(--muted-text-color);
+    letter-spacing: 0.04em;
+    padding: 6px 12px;
+    border-radius: 4px;
+    transition: color 0.25s ease, background-color 0.25s ease;
 }
 
 header nav ul li a:hover {
-    color: var(--secondary-color);  /* Neon pink on hover */
+    color: var(--primary-color);
+    background-color: rgba(0, 255, 255, 0.06);
+}
+
+header nav ul li a.active {
+    color: var(--secondary-color);
+    text-shadow: var(--glow-pink);
 }
 
 /* Main Content */
 main {
-    padding-top: 100px;  /* To offset the fixed navbar */
-    max-width: 100%;  /* Ensure no content overflows horizontally */
-    overflow-x: hidden;  /* Prevent horizontal scrolling in the main content */
+    padding-top: 72px;
+    max-width: 100%;
+    overflow-x: hidden;
 }
 
 /* Section Titles */
 section h2 {
-    font-size: 36px;
+    font-size: 0.8rem;
+    font-weight: 600;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
     margin-top: 0;
-    color: var(--secondary-color);  /* Neon pink section titles */
+    color: var(--secondary-color);
+    text-shadow: var(--glow-pink);
+    position: relative;
+    display: inline-block;
+    margin-bottom: 28px;
+}
+
+section h2::after {
+    content: '';
+    position: absolute;
+    bottom: -6px;
+    left: 0;
+    width: 0%;
+    height: 1px;
+    background: linear-gradient(90deg, var(--secondary-color), transparent);
+    transition: width 0.6s ease;
+}
+
+section h2.in-view::after {
+    width: 100%;
 }
 
 /* Footer */
 footer {
     background-color: var(--navbar-bg-color);
-    padding: 10px;
+    border-top: 1px solid rgba(0, 255, 255, 0.08);
+    padding: 16px;
     text-align: center;
-    color: var(--text-color);
-    max-width: 100%;  /* Prevent footer from exceeding screen width */
+    color: var(--muted-text-color);
+    font-size: 0.8rem;
+    max-width: 100%;
 }
 
 footer p {
     margin: 0;
+    color: var(--muted-text-color);
 }
 
-
-/* Horizontal Divider and Section Heading */
+/* Section Divider */
 hr {
     border: 0;
-    border-top: 2px solid var(--secondary-color);
-    margin: 20px 0;
+    height: 1px;
+    background: linear-gradient(to right, transparent, var(--secondary-color) 40%, var(--primary-color) 60%, transparent);
+    box-shadow: 0 0 8px rgba(255, 105, 180, 0.4);
+    margin: 24px 0 16px;
 }
 
-
-/* Responsive Design */
+/* Responsive */
 @media (max-width: 768px) {
     header nav ul {
         flex-direction: column;
@@ -131,6 +187,6 @@ hr {
 
     header nav ul li {
         margin-left: 0;
-        margin-bottom: 10px;
+        margin-bottom: 8px;
     }
 }
