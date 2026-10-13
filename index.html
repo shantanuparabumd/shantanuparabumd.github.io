@@ -84,8 +84,8 @@
 					<span class="line"><span>Parab</span></span>
 				</h1>
 				<p class="hero-lede">
-					Senior Robot Learning Engineer building robots that learn: reinforcement and
-					imitation learning, ROS&nbsp;2 systems, and the simulations they train in.
+					Senior Robot Learning Engineer building robots that learn: vision-language-action
+					and imitation-learning policies, the data pipelines that feed them, and ROS&nbsp;2 systems.
 				</p>
 				<div class="hero-actions">
 					<a class="btn btn-primary" href="#projects" data-magnetic>See projects</a>
@@ -125,34 +125,42 @@
 
 			<div class="work-layout">
 			<ol class="timeline">
-				<li class="tl-item is-current" data-metric="40%" data-metric-short="more user engagement" data-metric-label="higher user engagement from my robot-learning tutorials and YouTube series">
-					<time class="tl-date">Jun 2024 – present</time>
+				<li class="tl-item is-current" data-metric="~175" data-metric-short="merged SDK pull requests" data-metric-label="merged pull requests as technical lead of the Trossen SDK, the C++ data-collection platform for robot learning">
+					<time class="tl-date">Jul 2024 – present</time>
 					<div class="tl-body">
 						<div class="tl-org">
 							<span class="logo-tile logo-dark"><img src="images/logo/web/trossen.webp" alt="" width="240" height="134" loading="lazy"></span>
 							<h3>Trossen Robotics</h3>
 						</div>
 						<ol class="tl-roles">
-							<li class="is-now">Senior Robot Learning Engineer</li>
-							<li>Robotics and Machine Learning Intern</li>
+							<li class="is-now">Senior Robot Learning Engineer <span class="tl-when">Mar 2026 – present</span></li>
+							<li>Robotics &amp; ML Engineer <span class="tl-when">Jan 2025 – Mar 2026</span></li>
+							<li>Technical Evangelist (Robotics &amp; ML Intern) <span class="tl-when">Jul 2024 – Dec 2024</span></li>
 						</ol>
-						<p>Integrated multi-camera support for the Aloha kits with Hugging Face LeRobot, contributed open-source code, and helped grow a dataset-sharing community. Built a YouTube series and tutorials on imitation and reinforcement learning that lifted user engagement by 40%. Unified ROS 2, Python and C++ code into a single data-management interface and designed a touchscreen operator UI that cut setup time by 25%.</p>
-						<ul class="chips"><li>PyTorch</li><li>ROS 2</li><li>Python</li><li>C++</li><li>Reinforcement learning</li></ul>
+						<p>I lead robot learning at Trossen: bringing vision-language-action and imitation-learning policies (&pi;0, &pi;0.5, ACT, CrossFormer, Octo, diffusion policies) to Trossen AI Arms, and running the Robot Learning Experiments program from data collection through training and evaluation.</p>
+						<ul class="tl-points">
+							<li>Technical and product lead for the <strong>Trossen SDK</strong>, a modular C++ data-collection platform: episode lifecycle, LeRobot and MCAP storage, synchronized multi-camera recording, mobile-base support, teleoperation and Python bindings, plus its React web app.</li>
+							<li>Lead the company's data-collection effort and mentor a team of engineers and interns.</li>
+							<li>Integrated ALOHA into Hugging Face <strong>LeRobot</strong>, shipped the Aloha Solo kit, and run Trossen's community presence on the Hugging Face Hub.</li>
+							<li>Prototyped Meta Quest VR teleoperation and cloud training on RunPod and AWS SageMaker.</li>
+							<li>Advise enterprise and research labs on data collection and evaluation; represented Trossen at ICRA 2025 and the Actuate conference.</li>
+						</ul>
+						<ul class="chips"><li>PyTorch</li><li>VLA / imitation learning</li><li>LeRobot</li><li>C++</li><li>Python</li><li>ROS 2</li><li>React</li></ul>
 					</div>
 				</li>
-				<li class="tl-item" data-metric="100+" data-metric-short="students taught" data-metric-label="students taught RRT*, SLAM and ROS 2, with a 95% project completion rate">
+				<li class="tl-item" data-metric="100+" data-metric-short="students taught" data-metric-label="students co-taught path planning across three sections, with BFS, A*, RRT* and SLAM labs on TurtleBot">
 					<time class="tl-date">Jul 2023 – May 2024</time>
 					<div class="tl-body">
 						<div class="tl-org">
 							<span class="logo-tile logo-light"><img src="images/logo/web/umd.webp" alt="" width="240" height="136" loading="lazy"></span>
 							<h3>University of Maryland</h3>
 						</div>
-						<p class="tl-role">Teaching Assistant, Path Planning &amp; Robot Modeling</p>
-						<p>Taught and guided more than 100 students through RRT*, SLAM and ROS 2, with a 95% project completion rate. Reworked the curriculum around hands-on kinematics, behaviors and grasping, which raised engagement by 40%.</p>
+						<p class="tl-role">Graduate Teaching Assistant, Path Planning &amp; Robot Modeling</p>
+						<p>Co-taught Path Planning for Autonomous Robots (ENPM661) to 100+ students across three sections, leading labs on BFS, A*, RRT* and SLAM with TurtleBot, ROS and Gazebo, and designing the assignments, final exam and a path-planning competition. For Robot Modeling (ENPM662) I led the course's move from ROS 1 to ROS 2 Humble: syllabus, project templates and documentation.</p>
 						<ul class="chips"><li>Path planning</li><li>Robot modeling</li><li>Python</li><li>C++</li><li>ROS</li></ul>
 					</div>
 				</li>
-				<li class="tl-item" data-metric="1 yr" data-metric-short="supporting Intel" data-metric-label="supporting Intel's central inventory system with PL/SQL and Python">
+				<li class="tl-item" data-metric="80%" data-metric-short="fewer pipeline failures" data-metric-label="fewer failures in Intel's inventory data pipeline after my C++ ETL fixes">
 					<time class="tl-date">Jul 2021 – Jul 2022</time>
 					<div class="tl-body">
 						<div class="tl-org">
@@ -160,11 +168,11 @@
 							<h3>Accenture</h3>
 						</div>
 						<p class="tl-role">Associate Software Developer</p>
-						<p>Supported Intel's Central Inventory Business Repository, debugging and fixing issues with PL/SQL, Ab Initio and Python scripting.</p>
-						<ul class="chips"><li>PL/SQL</li><li>Python</li><li>Linux</li></ul>
+						<p>Kept Intel's CIBR inventory-management system running: diagnosed recurring data-flow and database failures, traced a critical defect where new 5-character product codes broke 4-character handling logic and fixed it at the core, and extended the C++ ETL application for new data formats, cutting failure rates by 80%.</p>
+						<ul class="chips"><li>C++</li><li>MySQL</li><li>ETL</li><li>PL/SQL</li><li>Python</li></ul>
 					</div>
 				</li>
-				<li class="tl-item" data-metric="2 yrs" data-metric-short="as team captain" data-metric-label="captaining the Robocon team from first concept to competition">
+				<li class="tl-item" data-metric="AIR 11" data-metric-short="All India Rank" data-metric-label="All India Rank at ABU Robocon, captaining a 25-person team">
 					<time class="tl-date">Jun 2019 – Jul 2021</time>
 					<div class="tl-body">
 						<div class="tl-org">
@@ -172,7 +180,7 @@
 							<h3>Robocon CRCE</h3>
 						</div>
 						<p class="tl-role">Team Captain</p>
-						<p>Led the undergraduate robotics team building robots from scratch for ABU Robocon problem statements, owning design and development from concept to competition.</p>
+						<p>Captained a 25-person undergraduate team that built two semi-autonomous robots for ABU Robocon's rugby-themed challenge, overseeing mechanical, electronics and software and securing sponsorships; the team placed All India Rank 11. Before that I designed battery-management circuits and PCBs as an electronics apprentice, and later mentored the 2023 team.</p>
 						<ul class="chips"><li>Python</li><li>Arduino</li><li>Raspberry Pi</li><li>SolidWorks</li></ul>
 					</div>
 				</li>
@@ -183,8 +191,8 @@
 						<span class="logo-tile work-logo logo-dark"><img src="images/logo/web/trossen.webp" alt="" width="240" height="134"></span>
 						<span class="work-step">role <b>1</b>/4</span>
 					</div>
-					<p class="work-metric">40%</p>
-					<p class="work-metric-label">higher user engagement from my robot-learning tutorials and YouTube series</p>
+					<p class="work-metric">~175</p>
+					<p class="work-metric-label">merged pull requests as technical lead of the Trossen SDK, the C++ data-collection platform for robot learning</p>
 					<div class="work-ticks"><i class="is-on"></i><i></i><i></i><i></i></div>
 				</div>
 			</aside>
@@ -246,7 +254,11 @@
 					<li class="skill is-core"><span class="k">learn</span>PyTorch</li>
 					<li class="skill is-core"><span class="k">learn</span>Reinforcement learning</li>
 					<li class="skill is-core"><span class="k">learn</span>Imitation learning</li>
+					<li class="skill is-core"><span class="k">learn</span>VLA models (&pi;0, ACT, Octo)</li>
 					<li class="skill is-core"><span class="k">learn</span>LeRobot</li>
+					<li class="skill"><span class="k">learn</span>Diffusion policies</li>
+					<li class="skill"><span class="k">learn</span>JAX</li>
+					<li class="skill"><span class="k">learn</span>TensorFlow</li>
 					<li class="skill is-core"><span class="k">robotics</span>ROS 2</li>
 					<li class="skill"><span class="k">robotics</span>MuJoCo</li>
 					<li class="skill"><span class="k">robotics</span>Gazebo plugins</li>
@@ -254,6 +266,8 @@
 					<li class="skill"><span class="k">robotics</span>Inverse kinematics</li>
 					<li class="skill"><span class="k">robotics</span>Path planning</li>
 					<li class="skill"><span class="k">robotics</span>SLAM</li>
+					<li class="skill"><span class="k">robotics</span>MoveIt</li>
+					<li class="skill"><span class="k">robotics</span>Teleoperation</li>
 					<li class="skill"><span class="k">learn</span>NeRF</li>
 					<li class="skill"><span class="k">learn</span>PointNet</li>
 					<li class="skill"><span class="k">learn</span>CNN / LSTM</li>
@@ -272,6 +286,12 @@
 					<li class="skill"><span class="k">hw</span>Arduino</li>
 					<li class="skill"><span class="k">cad</span>SolidWorks</li>
 					<li class="skill"><span class="k">cad</span>Blender</li>
+					<li class="skill"><span class="k">code</span>React</li>
+					<li class="skill"><span class="k">ops</span>Docker</li>
+					<li class="skill"><span class="k">ops</span>GitHub Actions</li>
+					<li class="skill"><span class="k">ops</span>RunPod</li>
+					<li class="skill"><span class="k">ops</span>AWS SageMaker</li>
+					<li class="skill"><span class="k">hw</span>RealSense / ZED</li>
 					<li class="skill"><span class="k">code</span>Git</li>
 					<li class="skill"><span class="k">code</span>Linux</li>
 					<li class="skill"><span class="k">code</span>Java</li>

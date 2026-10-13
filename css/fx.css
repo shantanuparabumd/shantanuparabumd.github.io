@@ -221,6 +221,16 @@ body::after {
 .to-top { color: var(--text); text-decoration: none; font-weight: 600; }
 .to-top:hover { color: var(--neon); }
 
+/* ── Work: role dates and highlight bullets ─────────────────────────────── */
+.tl-when { display: inline-block; white-space: nowrap; margin-left: 8px; font-family: var(--mono); font-size: 0.78rem; font-weight: 400; color: var(--text-dim); text-shadow: none; }
+.tl-points { list-style: none; margin: 0 0 18px; padding: 0; display: grid; gap: 10px; max-width: var(--measure); }
+.tl-points li { position: relative; padding-left: 20px; color: var(--text-dim); line-height: 1.55; }
+.tl-points li::before {
+  content: ''; position: absolute; left: 0; top: 0.62em; width: 8px; height: 8px;
+  border: 1.5px solid var(--neon); transform: rotate(45deg);
+}
+.tl-points strong { color: var(--text); font-weight: 650; }
+
 /* ── Inline role metric (shown where the sticky panel is hidden) ─────────── */
 .tl-metric {
   display: inline-flex; align-items: baseline; gap: 10px; margin: 0 0 16px !important;
