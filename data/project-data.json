@@ -5,9 +5,15 @@
       "title": "Drone Delivery Simulation",
       "image": "images/project/drone.webp",
       "description": "A drone simulation system for automated parcel delivery with Gazebo and ROS plugins.",
-      "tags": ["Gazebo", "ROS", "Blender", "SolidWorks", "Drone Simulation"],
+      "tags": [
+        "Gazebo",
+        "ROS",
+        "Blender",
+        "SolidWorks",
+        "Drone Simulation"
+      ],
       "github": "https://github.com/shantanuparabumd/drone_delivery",
-      "video": "images/videos/drone.mp4",
+      "video": "",
       "date": "May 2024",
       "longDescription": "This project involves developing a simulated drone delivery system using Gazebo, ROS, SolidWorks, and Blender. The drone, modeled in SolidWorks, is equipped with custom plugins for flight control, odometry publishing, and vacuum gripper functionality for picking up and placing parcels based on detected Aruco markers. The drone's flight is stabilized through a PID controller, while odometry data serves as feedback. The environment and parcels are modeled in Blender, with necessary physics adjustments for realistic simulation. The article provides a step-by-step guide on developing plugins for drone flight, grasping, and controlled delivery of parcels in specified locations.",
       "media": [
@@ -17,22 +23,31 @@
         },
         {
           "type": "video",
-          "url": "images/videos/drne.mp4"
+          "url": "images/videos/web/drne.mp4",
+          "poster": "images/videos/posters/drne.jpg"
         },
         {
           "type": "article",
           "image": "images/project/drone.webp",
           "url": "https://medium.com/@shantanuparab99/unleashing-the-power-of-simulation-engines-writing-plugins-for-enhanced-drone-simulations-ab7c847ca432"
         }
-      ]
+      ],
+      "category": "Simulation",
+      "preview": "images/videos/web/drne.mp4"
     },
-
     {
       "id": 2,
       "title": "Quadruped Robot Simulation",
       "image": "images/project/quadruped.png",
       "description": "A Quadruped Robot designed from scratch in SolidWorks and simulated in Gazebo with ROS communication and Python control.",
-      "tags": ["ROS", "Gazebo", "SolidWorks", "Inverse Kinematics", "URDF", "Python"],
+      "tags": [
+        "ROS",
+        "Gazebo",
+        "SolidWorks",
+        "Inverse Kinematics",
+        "URDF",
+        "Python"
+      ],
       "github": "https://github.com/shantanuparabumd/quad_robo",
       "video": "",
       "date": "November 2023",
@@ -40,22 +55,33 @@
       "media": [
         {
           "type": "video",
-          "url": "images/videos/quadruped.mp4"
+          "url": "images/videos/web/quadruped.mp4",
+          "poster": "images/videos/posters/quadruped.jpg"
         },
         {
           "type": "article",
           "image": "images/project/quadruped.png",
           "url": "https://www.linkedin.com/posts/shantanu-parab_robotics-simulation-rosnoetic-activity-7093805585623572481-FQK-?utm_source=share&utm_medium=member_desktop"
         }
-      ]
+      ],
+      "category": "Simulation",
+      "preview": "images/videos/web/quadruped.mp4"
     },
-
     {
       "id": 3,
       "title": "Autonomous Robot",
       "image": "images/project/autobot.png",
       "description": "Developed an autonomous vehicle capable of navigating complex obstacle courses and performing object manipulation tasks.",
-      "tags": ["ROS2", "C++", "Python", "Perception", "Path Planning", "Raspberry Pi", "YOLO", "MiDAS"],
+      "tags": [
+        "ROS2",
+        "C++",
+        "Python",
+        "Perception",
+        "Path Planning",
+        "Raspberry Pi",
+        "YOLO",
+        "MiDAS"
+      ],
       "github": "https://github.com/shantanuparabumd/Autonomous-Robot-809T",
       "video": "",
       "date": "May 2023",
@@ -67,21 +93,31 @@
         },
         {
           "type": "video",
-          "url": "images/videos/autorobot.mp4"
+          "url": "images/videos/web/autorobot.mp4",
+          "poster": "images/videos/posters/autorobot.jpg"
         },
         {
           "type": "video",
-          "url": "images/videos/grandchallenge.mp4"
+          "url": "images/videos/web/grandchallenge.mp4",
+          "poster": "images/videos/posters/grandchallenge.jpg"
         }
-      ]
+      ],
+      "category": "Autonomy",
+      "featured": 3,
+      "preview": "images/videos/web/autorobot.mp4",
+      "cardImage": "images/project/thumbs/autobot.webp"
     },
-
     {
       "id": 4,
       "title": "ARIAC Project",
       "image": "images/project/ariac.png",
       "description": "Implemented robotics solutions for industrial automation tasks as part of the ARIAC competition.",
-      "tags": ["ROS", "Industrial Automation", "Robotics", "Automation"],
+      "tags": [
+        "ROS",
+        "Industrial Automation",
+        "Robotics",
+        "Automation"
+      ],
       "github": "https://github.com/shantanuparabumd/ariac_2024",
       "video": "",
       "date": "May 2024",
@@ -93,21 +129,34 @@
         },
         {
           "type": "video",
-          "url": "images/videos/ARIAC.mp4"
+          "url": "images/videos/web/ARIAC.mp4",
+          "poster": "images/videos/posters/ARIAC.jpg"
         },
         {
           "type": "video",
-          "url": "images/videos/ariac.mp4"
+          "url": "images/videos/web/ariac.mp4",
+          "poster": "images/videos/posters/ariac.jpg"
         }
-      ]
+      ],
+      "category": "Autonomy",
+      "featured": 2,
+      "preview": "images/videos/web/ARIAC.mp4",
+      "cardImage": "images/project/thumbs/ariac.webp"
     },
-
     {
       "id": 5,
       "title": "Autonomous Vehicle Simulation",
       "image": "images/project/autovehicle.png",
       "description": "Developed a ROS2-based autonomous vehicle simulation using Gazebo, equipped with advanced path planning and obstacle avoidance capabilities.",
-      "tags": ["ROS2", "Gazebo", "Path Planning", "C++", "Python", "LiDAR", "Computer Vision"],
+      "tags": [
+        "ROS2",
+        "Gazebo",
+        "Path Planning",
+        "C++",
+        "Python",
+        "LiDAR",
+        "Computer Vision"
+      ],
       "github": "https://github.com/shantanuparabumd/autonomous_vehicle",
       "video": "",
       "date": "March 2024",
@@ -119,22 +168,30 @@
         },
         {
           "type": "video",
-          "url": "images/videos/auto_vehicle.mp4"
+          "url": "images/videos/web/auto_vehicle.mp4",
+          "poster": "images/videos/posters/auto_vehicle.jpg"
         },
         {
           "type": "article",
           "image": "images/project/autovehicle.png",
           "url": "https://www.linkedin.com/posts/shantanu-parab_osrf-autonomousvehicles-ros2-activity-7183615111591325696-FY1u?utm_source=share&utm_medium=member_desktop"
         }
-      ]
+      ],
+      "category": "Autonomy",
+      "preview": "images/videos/web/auto_vehicle.mp4",
+      "cardImage": "images/project/thumbs/autovehicle.webp"
     },
-
     {
       "id": 6,
       "title": "Point Cloud Classification",
       "image": "images/project/pred_sample_1 (1).gif",
       "description": "Explored advanced 3D vision techniques for point cloud classification using PointNet and 3D model generation using NeRF.",
-      "tags": ["Python", "PointNet", "3D Vision", "Computer Vision"],
+      "tags": [
+        "Python",
+        "PointNet",
+        "3D Vision",
+        "Computer Vision"
+      ],
       "github": "https://github.com/shantanuparabumd/assignment4_sparab",
       "video": "",
       "date": "December 2023",
@@ -160,15 +217,20 @@
           "type": "image",
           "url": "images/project/pred_sample_2.gif"
         }
-      ]
-    },    
-
+      ],
+      "category": "Perception"
+    },
     {
       "id": 7,
       "title": "Swarm Robotics: Firefly Algorithm",
       "image": "images/project/firefly.png",
       "description": "Implemented a bio-inspired Firefly algorithm for swarm robotics in a Gazebo simulation using ROS2, enabling object identification and collaborative decision-making.",
-      "tags": ["ROS2", "C++", "OpenCV", "Firefly Algorithm"],
+      "tags": [
+        "ROS2",
+        "C++",
+        "OpenCV",
+        "Firefly Algorithm"
+      ],
       "github": "https://github.com/shantanuparabumd/firefly_swarm",
       "video": "",
       "date": "October 2023",
@@ -176,22 +238,30 @@
       "media": [
         {
           "type": "video",
-          "url": "images/videos/firefly.mp4"
+          "url": "images/videos/web/firefly.mp4",
+          "poster": "images/videos/posters/firefly.jpg"
         },
         {
           "type": "article",
           "image": "images/project/firefly.png",
           "url": "https://medium.com/@shantanuparab99/firefly-algorithm-bio-inspired-decision-making-algorithm-d25941725d14"
         }
-      ]
+      ],
+      "category": "Autonomy",
+      "preview": "images/videos/web/firefly.mp4"
     },
-
     {
       "id": 8,
       "title": "Conveyor Belt Plugin for Gazebo",
       "image": "images/project/conveyor.png",
       "description": "Developed a custom Gazebo plugin to simulate a conveyor belt, complete with object motion control using ROS2.",
-      "tags": ["ROS2", "Gazebo", "C++", "Simulation", "Custom Plugin"],
+      "tags": [
+        "ROS2",
+        "Gazebo",
+        "C++",
+        "Simulation",
+        "Custom Plugin"
+      ],
       "github": "https://github.com/shantanuparabumd/conveyor_belt",
       "video": "",
       "date": "September 2023",
@@ -199,7 +269,8 @@
       "media": [
         {
           "type": "video",
-          "url": "images/videos/conveyor.mp4"
+          "url": "images/videos/web/conveyor.mp4",
+          "poster": "images/videos/posters/conveyor.jpg"
         },
         {
           "type": "article",
@@ -211,15 +282,22 @@
           "image": "images/blogs/contruct.jpeg",
           "url": "https://www.linkedin.com/feed/update/urn:li:activity:7210220325630877696/"
         }
-      ]
+      ],
+      "category": "Simulation",
+      "preview": "images/videos/web/conveyor.mp4"
     },
-
     {
       "id": 9,
       "title": "Path Planning for Non-Holonomic Robots",
       "image": "images/project/path.png",
       "description": "Implemented Dubins curves and A* search algorithms in Python, tested with weighted A* and Dijkstra's, and validated using a ROS1 node on a TurtleBot3 in Gazebo.",
-      "tags": ["ROS2", "Gazebo", "C++", "Simulation", "Path Planning"],
+      "tags": [
+        "ROS2",
+        "Gazebo",
+        "C++",
+        "Simulation",
+        "Path Planning"
+      ],
       "github": "https://github.com/VKSingh03/astar_turtlebot_ros_noetic",
       "video": "",
       "date": "March 2023",
@@ -227,21 +305,29 @@
       "media": [
         {
           "type": "video",
-          "url": "images/videos/turtlebot_pp.mp4"
+          "url": "images/videos/web/turtlebot_pp.mp4",
+          "poster": "images/videos/posters/turtlebot_pp.jpg"
         },
         {
           "type": "video",
-          "url": "images/videos/turtlebot_pp2.mp4"
+          "url": "images/videos/web/turtlebot_pp2.mp4",
+          "poster": "images/videos/posters/turtlebot_pp2.jpg"
         }
-      ]
+      ],
+      "category": "Autonomy",
+      "preview": "images/videos/web/turtlebot_pp.mp4"
     },
-
     {
       "id": 10,
       "title": "Advancing Esports Analytics using CNN and LSTM",
       "image": "images/project/valorant.jpg",
       "description": "Designed a CNN + LSTM Neural network to do live win prediction for the Valorant video game.",
-      "tags": ["Pytorch", "Computer Vision", "CNN", "LSTM"],
+      "tags": [
+        "PyTorch",
+        "Computer Vision",
+        "CNN",
+        "LSTM"
+      ],
       "github": "https://github.com/VKSingh03/astar_turtlebot_ros_noetic",
       "video": "",
       "date": "December 2023",
@@ -249,23 +335,28 @@
       "media": [
         {
           "type": "video",
-          "url": "images/videos/esport.mp4"
+          "url": "images/videos/web/esport.mp4",
+          "poster": "images/videos/posters/esport.jpg"
         },
         {
           "type": "article",
           "image": "images/project/valorant.jpg",
-          "url": "images/reports/enmp809k_project_report.pdf"
+          "url": "images/reports/enpm809k_project_report.pdf"
         }
-        
-      ]
+      ],
+      "category": "Perception",
+      "preview": "images/videos/web/esport.mp4"
     },
-
     {
       "id": 11,
       "title": "Neural Implicit Representation based SLAM techniques",
       "image": "images/project/nerf.png",
       "description": "Explored and benchmarked state-of-the-art Neural Radiance Field (NeRF) methods for generating high-fidelity 3D models, emphasizing their practical applications and performance trade-offs.",
-      "tags": ["Pytorch", "Computer Vision", "CNN", "LSTM"],
+      "tags": [
+        "PyTorch",
+        "SLAM",
+        "Neural Implicit Representations"
+      ],
       "github": "https://github.com/VKSingh03/astar_turtlebot_ros_noetic",
       "video": "",
       "date": "December 2023",
@@ -276,15 +367,19 @@
           "image": "images/project/nerf.png",
           "url": "images/reports/cmsc848f_project_report.pdf"
         }
-      ]
+      ],
+      "category": "Perception"
     },
-
     {
       "id": 12,
       "title": "Single View Image to 3D",
       "image": "images/project/mesh_render.gif",
       "description": "Developed a pipeline to reconstruct 3D objects from single-view images using voxel grids, point clouds, and meshes, employing custom decoders, hyperparameter tuning, and iterative visualizations for enhanced understanding and performance.",
-      "tags": ["Pytorch", "Computer Vision", "3D Vision"],
+      "tags": [
+        "PyTorch",
+        "Computer Vision",
+        "3D Vision"
+      ],
       "github": "https://github.com/shantanuparabumd/assignment_2_sparab",
       "video": "",
       "date": "October 2023",
@@ -310,15 +405,19 @@
           "type": "image",
           "url": "images/project/mesh_gt_batch16_instance8 (1).gif"
         }
-      ]
+      ],
+      "category": "Perception"
     },
-
     {
-      "id": 12,
+      "id": 15,
       "title": "NeRF Rendering",
       "image": "images/project/lego.gif",
       "description": "Implemented a pipeline for Neural Radiance Fields (NeRF) using differentiable volume rendering, ray sampling, and optimization techniques to generate 3D scene representations and realistic renderings.",
-      "tags": ["Pytorch", "Computer Vision", "CNN", "LSTM"],
+      "tags": [
+        "PyTorch",
+        "NeRF",
+        "3D Vision"
+      ],
       "github": "https://github.com/shantanuparabumd/assignment3_sparab",
       "video": "",
       "date": "November 2023",
@@ -328,15 +427,20 @@
           "type": "image",
           "url": "images/project/lego.gif"
         }
-      ]
+      ],
+      "category": "Perception"
     },
-
     {
       "id": 13,
       "title": "TD3 Reinforcement Learning for Quadruped Locomotion",
       "image": "images/project/evaluation_demo_loop.gif",
       "description": "Developed a robust RL pipeline using the TD3 algorithm to train a simulated quadruped (Ant) for efficient and stable locomotion in the Gymnasium Ant-v5 environment.",
-      "tags": ["Reinforcement Learning", "TD3", "Gymnasium", "PyTorch"],
+      "tags": [
+        "Reinforcement Learning",
+        "TD3",
+        "Gymnasium",
+        "PyTorch"
+      ],
       "github": "https://github.com/shantanuparabumd/openai_gym",
       "video": "",
       "date": "November 2023",
@@ -350,31 +454,37 @@
           "type": "image",
           "url": "images/project/evaluation_demo_loop.gif"
         }
-      ]
+      ],
+      "category": "Robot learning",
+      "preview": "images/project/evaluation_demo.mp4",
+      "cardImage": "images/project/thumbs/evaluation_demo_loop.webp"
     },
-
     {
       "id": 14,
       "title": "TD3 Simulation for Quadruped Robot",
       "image": "images/project/quad_rl.gif",
       "description": "Developed a simulation pipeline for training a quadruped robot to walk using the Twin Delayed Deep Deterministic Policy Gradient (TD3) algorithm, optimizing locomotion policies through reinforcement learning in a custom MuJoCo environment.",
-      "tags": ["Reinforcement Learning", "TD3", "MuJoCo", "PyTorch"],
+      "tags": [
+        "Reinforcement Learning",
+        "TD3",
+        "MuJoCo",
+        "PyTorch"
+      ],
       "github": "https://github.com/shantanuparabumd/openai_gym",
-      "video": "images/videos/quadruped_rl.mp4",
+      "video": "images/videos/web/quadruped_rl.mp4",
       "date": "January 2025",
       "longDescription": "This project implements a reinforcement learning pipeline to train a quadruped robot to achieve stable locomotion using the Twin Delayed Deep Deterministic Policy Gradient (TD3) algorithm. The simulation is conducted in a custom MuJoCo environment tailored for quadruped dynamics, enabling efficient interaction with the physics engine. Key features include reward shaping for gait patterns, height stabilization, and velocity tracking, along with constraints to ensure realistic motion. The training leverages experience replay, target network updates, and delayed policy updates to stabilize learning. The results showcase progressively improving walking behaviors, visualized through trajectory plots, joint angle evolution, and rendered walking sequences. This project integrates PyTorch for implementing the TD3 algorithm and demonstrates the potential of reinforcement learning in robotic locomotion tasks.",
       "media": [
         {
           "type": "video",
-          "url": "images/videos/quadruped_rl.mp4"
+          "url": "images/videos/web/quadruped_rl.mp4",
+          "poster": "images/videos/posters/quadruped_rl.jpg"
         }
-      ]
+      ],
+      "category": "Robot learning",
+      "featured": 1,
+      "preview": "images/videos/web/quadruped_rl.mp4",
+      "cardImage": "images/videos/posters/quadruped_rl.jpg"
     }
-    
-    
-
-      
-
-      
   ]
 }
