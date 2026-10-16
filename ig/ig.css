@@ -1,0 +1,82 @@
+/* =============================================================================
+   ig.css — the /ig/ link-in-bio page. Builds on site.css tokens; a single
+   narrow column with large type and full-width tap targets, because nearly
+   every visit comes from Instagram's in-app browser on a phone.
+   ========================================================================== */
+
+.ig-page { background: var(--bg); }
+
+.ig-main {
+  width: 100%; max-width: 560px; margin-inline: auto;
+  padding: 28px 16px 64px;
+}
+
+/* ── Title ───────────────────────────────────────────────────────────────── */
+.ig-intro { margin-bottom: 20px; }
+.ig-intro h1 { font-size: clamp(1.75rem, 7vw, 2.25rem); line-height: 1.1; }
+.ig-lede { margin: 6px 0 0; color: var(--text-dim); font-size: 1.05rem; }
+
+/* ── Search ──────────────────────────────────────────────────────────────── */
+.ig-search {
+  display: flex; align-items: center; gap: 10px;
+  padding: 0 16px; height: 52px;
+  background: var(--surface); border: 1px solid var(--rule-strong);
+  border-radius: var(--radius-m); color: var(--text-dim);
+}
+.ig-search:focus-within { border-color: var(--neon); }
+.ig-search input {
+  flex: 1; min-width: 0; height: 100%;
+  background: transparent; border: 0; outline: 0;
+  color: var(--text); font: inherit; font-size: 1.0625rem; /* 16px+ stops iOS zoom-on-focus */
+}
+.ig-search input::placeholder { color: var(--text-dim); }
+
+.ig-count { margin: 10px 2px 16px; min-height: 1.2em; color: var(--text-dim); font-size: 0.9rem; }
+
+/* ── Reels ───────────────────────────────────────────────────────────────── */
+.ig-list { list-style: none; margin: 0; padding: 0; display: grid; gap: 16px; }
+
+.ig-reel {
+  padding: 18px; background: var(--surface);
+  border: 1px solid var(--rule-strong); border-radius: var(--radius-m);
+  scroll-margin-top: 16px;
+}
+.ig-reel.is-target { border-color: var(--neon); box-shadow: var(--glow); }
+
+.ig-reel-meta {
+  display: flex; align-items: center; gap: 10px;
+  font-size: 0.9rem; color: var(--text-dim);
+}
+.ig-code {
+  padding: 3px 10px; border-radius: var(--radius-s);
+  background: var(--neon); color: var(--on-neon);
+  font-family: var(--mono); font-weight: 700; font-size: 0.95rem; letter-spacing: 0.04em;
+}
+.ig-reel h2 { margin: 12px 0 0; font-size: 1.25rem; line-height: 1.3; }
+.ig-reel p { margin: 6px 0 0; color: var(--text-dim); font-size: 1rem; line-height: 1.5; }
+
+.ig-links { list-style: none; margin: 16px 0 0; padding: 0; display: grid; gap: 10px; }
+.ig-links a {
+  display: flex; align-items: center; gap: 12px;
+  padding: 14px 16px; min-height: 56px;
+  background: var(--surface-sunk); border: 1px solid var(--rule-strong);
+  border-radius: var(--radius-m);
+  color: var(--text); text-decoration: none; font-size: 1.0625rem; font-weight: 600;
+  transition: border-color 0.2s;
+}
+.ig-links a:hover, .ig-links a:active { border-color: var(--neon); color: var(--text); }
+.ig-links a > i:first-child { font-size: 1.3rem; color: var(--neon); }
+.ig-links .label { flex: 1; min-width: 0; overflow-wrap: anywhere; }
+.ig-links .kind {
+  font-size: 0.8rem; font-weight: 500; text-transform: uppercase;
+  letter-spacing: 0.05em; color: var(--text-dim);
+}
+
+.ig-empty {
+  padding: 24px 16px; text-align: center; color: var(--text-dim); font-size: 1rem;
+  border: 1px dashed var(--rule-strong); border-radius: var(--radius-m);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .ig-links a { transition: none; }
+}

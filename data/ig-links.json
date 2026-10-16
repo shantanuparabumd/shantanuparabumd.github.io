@@ -1,0 +1,28 @@
+{
+  "reels": [
+    {
+      "code": "R002",
+      "title": "Gemini 4 Argon for Robotics",
+      "date": "2026-10-15",
+      "summary": "Google's new model for robot control, real-to-sim, physical understanding and self-improvement.",
+      "tags": ["google", "gemini", "embodied reasoning", "vla"],
+      "links": [
+        { "type": "blog", "label": "Google's announcement", "url": "https://developers.googleblog.com/gemini-4-argon-for-robotics/" },
+        { "type": "github", "label": "ERQA benchmark", "url": "https://github.com/embodiedreasoning/ERQA" },
+        { "type": "docs", "label": "Gemini API docs", "url": "https://ai.google.dev/gemini-api/docs" }
+      ]
+    },
+    {
+      "code": "R001",
+      "title": "Physical Intelligence opens its API beta",
+      "date": "2026-10-14",
+      "summary": "Fine-tune π's robot foundation models on managed infrastructure and run them on your robot via hosted inference.",
+      "tags": ["physical intelligence", "pi", "openpi", "api", "vla"],
+      "links": [
+        { "type": "blog", "label": "π's announcement", "url": "https://www.pi.website/blog/api-beta" },
+        { "type": "github", "label": "openpi (π0 and π0.5)", "url": "https://github.com/Physical-Intelligence/openpi" },
+        { "type": "signup", "label": "Join the API waitlist", "url": "https://www.pi.website/waitlist" }
+      ]
+    }
+  ]
+}

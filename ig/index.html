@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Reel Links | Shantanu Parab</title>
+	<meta name="description" content="Blogs, schematics and GitHub repos mentioned in Shantanu Parab's Instagram reels on robot learning and robotics.">
+	<meta name="author" content="Shantanu Parab">
+	<link rel="canonical" href="https://shantanuparabumd.github.io/ig/">
+	<meta name="theme-color" content="#050807">
+
+	<meta property="og:title" content="Reel Links | Shantanu Parab">
+	<meta property="og:description" content="Every blog, schematic and repo mentioned in the reels.">
+	<meta property="og:image" content="https://shantanuparabumd.github.io/images/background/profile.jpg">
+	<meta property="og:url" content="https://shantanuparabumd.github.io/ig/">
+	<meta property="og:type" content="website">
+	<meta name="twitter:card" content="summary">
+
+	<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='6' fill='%23050807'/%3E%3Ccircle cx='16' cy='16' r='6' fill='none' stroke='%2300FF9C' stroke-width='3'/%3E%3C/svg%3E">
+
+	<!-- Apply the saved or system theme before first paint to avoid a flash. -->
+	<script>
+		(function () {
+			var t = null;
+			try { t = localStorage.getItem('portfolio-theme'); } catch (e) {}
+			if (!t) t = window.matchMedia('(prefers-color-scheme: light)').matches ? 'light' : 'dark';
+			document.documentElement.setAttribute('data-theme', t);
+		})();
+	</script>
+
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@62..125,300..900&display=swap" rel="stylesheet">
+	<link rel="stylesheet" href="../css/site.css">
+	<link rel="stylesheet" href="../css/icons.css">
+	<link rel="stylesheet" href="ig.css">
+</head>
+<body class="ig-page">
+	<main class="ig-main">
+		<header class="ig-intro">
+			<h1>Links from the reels</h1>
+			<p class="ig-lede">by Shantanu Parab</p>
+		</header>
+
+		<label class="ig-search">
+			<i class="fas fa-search" aria-hidden="true"></i>
+			<span class="sr-only">Search reels by code or topic</span>
+			<input id="ig-query" type="search" placeholder="Search a code like R001, or a topic" autocomplete="off" spellcheck="false">
+		</label>
+		<p id="ig-count" class="ig-count" aria-live="polite"></p>
+		<ol id="ig-list" class="ig-list" aria-label="Reels"></ol>
+	</main>
+
+	<script src="ig.js" defer></script>
+</body>
+</html>
